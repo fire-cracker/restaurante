@@ -1,26 +1,21 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import { BrowserRouter, Switch, Route } from 'react-router-dom'
+import Container from 'react-bootstrap/Container'
+
+import Header from './components/Header/Header'
+import LandingPage from './views/LandingPage'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <BrowserRouter>
+      <Container fluid className='p-0'>
+        <Header/>
+        <Switch>
+          <Route exact path='/' component={LandingPage}/>
+        </Switch>
+      </Container>
+    </BrowserRouter>
+  )
 }
 
-export default App;
+export default App
