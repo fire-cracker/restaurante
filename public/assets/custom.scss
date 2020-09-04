@@ -27,9 +27,12 @@ $theme-colors: (
   'danger': teal,
   'black': #081624,
   'darkkhaki': #c5a572,
-  'dimgray': #D0D0D0
+  'dimgray': #D0D0D0,
+  'ghostwhite': #f7f9fb,
 );
 
 @import './header.scss';
 @import './home.scss';
+@import './banner.scss';
+@import './menus.scss';
 @import '../node_modules/bootstrap/scss/bootstrap';
