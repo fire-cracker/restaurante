@@ -5,7 +5,7 @@ import Menus from '../components/Menus'
 
 const LandingPage: React.FC = () => {
   return (
-      <Container fluid className='p-0'>
+      <Container fluid className='home-wrapper p-0'>
         <Banner />
         <Menus />
       </Container>

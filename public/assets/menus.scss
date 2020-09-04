@@ -8,17 +8,99 @@
         font-size: 1em;
         .nav {
           .nav-item {
+            text-align: center;
+            // width: 75%;
             .nav-link {
               border: none;
               box-shadow: 0 0 6px 0 rgba(26, 42, 58, 0.03);
               font-size: 16px;
               color: #666;
-              font-size: 16px;
               font-weight: 500;
+              &.active {
+                background: var(--darkkhaki) !important;
+              }
+              p {
+                color: #1b2c3d;
+                font-size: 17px;
+                line-height: 24px;
+                margin-left: 0;
+              }
+            }
+            .nav-link:hover {
+              background: var(--darkkhaki) !important;
             }
           }
         }
       }
     }
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .menu-container {
+    .container-body {
+      .navs-container {
+        margin: auto !important;
+        .nav {
+          .nav-item {
+            width: auto !important;
+            margin: auto !important;
+          }
+        }
+      }
+      .menu-body {
+        .row {
+          width: 100%;
+          margin: auto;
+          .media {
+            align-items: center;
+            img {
+              margin: 0 !important;
+            }
+            .media-body {
+              width: auto;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .menu-container {
+    .container-body {
+      .navs-container {
+        margin: auto !important;
+        .nav {
+          .nav-item {
+            width: auto !important;
+            margin: auto !important;
+          }
+        }
+      }
+      .menu-body {
+        .row {
+          width: 100%;
+          margin: auto;
+          .media {
+            flex-direction: column;
+            align-items: center;
+            img {
+              margin: 0 !important;
+            }
+            .media-body {
+              width: auto;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 1000px) {
+  .menu-container {
+    padding: 0 !important;
   }
 }
