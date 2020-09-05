@@ -5,12 +5,18 @@ import Container from 'react-bootstrap/Container'
 import Header from './components/Header/Header'
 import LandingPage from './views/LandingPage'
 import MenusSection from './components/Menus'
+import ReservationPage from './views/ReservationPage'
 
 const App: FC = () => {
   const menuRef: RefObject<any> = useRef(null)
   const scrollToRef = (history: any, ref: any) => {
     if (ref.current) ref.current.scrollIntoView({ behavior: 'smooth', block: 'start' })
-    history.push('/menu')
+    else{
+      history.push('/home/menu')
+      setTimeout(()=> {
+        ref.current.scrollIntoView({ behavior: 'smooth', block: 'start' })
+      },200)
+    }
   }
   const executeScroll = (history: any) => {
     scrollToRef(history, menuRef)
@@ -21,8 +27,9 @@ const App: FC = () => {
       <Container fluid className='p-0'>
         <Header executeScrollToMenu={executeScroll} />
         <Switch>
-          <Route exact path='/' render={(props)=> <LandingPage {...props} menuRef={menuRef}/>}/>
-          <Route exact path='/menu' render={() => <MenusSection />} />
+          <Route path='/home' render={(props)=> <LandingPage {...props} menuRef={menuRef}/>}/>
+          <Route exact path='/home/menu' render={() => <MenusSection menuRef={menuRef} />} />
+          <Route exact path='/reservation' render={() => <ReservationPage/>} />
         </Switch>
       </Container>
     </BrowserRouter>
