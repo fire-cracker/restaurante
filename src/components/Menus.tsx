@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { FC, RefObject } from 'react'
 import Tab from 'react-bootstrap/Tab'
 import Nav from 'react-bootstrap/Nav'
 import Row from 'react-bootstrap/Row'
@@ -7,9 +7,12 @@ import Container from 'react-bootstrap/Container'
 import Jumbotron from 'react-bootstrap/Jumbotron'
 import Media from 'react-bootstrap/Media'
 
-const Menus = () => {
+interface Props {
+  menuRef?: RefObject<HTMLInputElement>
+}
+const MenusSection: FC<Props> = (props) => {
   return (
-    <Jumbotron fluid className='menu-jumbotron bg-ghostwhite px-0'>
+    <Jumbotron ref={props.menuRef} fluid className='menu-jumbotron bg-ghostwhite px-0'>
       <Container className='menu-container m-auto'>
         <Row className='container-wrapper px-0'>
           <Tab.Container defaultActiveKey='breakfast'>
@@ -124,4 +127,4 @@ const Menus = () => {
   )
 }
 
-export default Menus
+export default MenusSection
