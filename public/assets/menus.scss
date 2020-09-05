@@ -2,8 +2,29 @@
   padding-top: 90px;
   padding-bottom: 70px;
   margin-bottom: 0;
+  font-family: 'Montserrat', Tahoma, Geneva, sans-serif;
   .menu-container {
     .container-body {
+      .menu-header{
+        text-align: center;
+        h4{
+          font-weight: 600;
+          font-size: 1rem;
+        }
+        h2{
+          font-family: var(--font-family-bellefair);
+          font-weight: 400;
+          font-size: 3rem;
+        }
+        .divider{
+          & .line {
+            border-bottom: 1px solid var(--darkkhaki);
+          }
+          .icon{
+            margin: 0;
+          }
+        }
+      }
       .navs-container {
         font-size: 1em;
         .nav {
@@ -32,6 +53,27 @@
           }
         }
       }
+      .menu-body {
+        .row {
+          .media {
+            img {
+              border: 5px solid var(--white);
+              box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.07);
+            }
+            .media-body {
+              line-height: 26px;
+              h5 {
+                border-bottom: 1px dashed #cdcdcd;
+                font-size: 24px;
+              }
+              p {
+                color: #4d5257;
+                font-size: 14px;
+              }
+            }
+          }
+        }
+      }
     }
   }
 }
@@ -42,9 +84,12 @@
       .navs-container {
         margin: auto !important;
         .nav {
-          .nav-item {
-            width: auto !important;
-            margin: auto !important;
+          .nav-col {
+            margin-bottom: 2rem;
+            .nav-item {
+              width: auto !important;
+              margin: auto !important;
+            }
           }
         }
       }
@@ -59,6 +104,7 @@
             }
             .media-body {
               width: auto;
+              padding-left: 1rem;
             }
           }
         }
@@ -73,9 +119,12 @@
       .navs-container {
         margin: auto !important;
         .nav {
-          .nav-item {
-            width: auto !important;
-            margin: auto !important;
+          .nav-col {
+            margin-bottom: 1rem;
+            .nav-item {
+              width: auto !important;
+              margin: auto !important;
+            }
           }
         }
       }
@@ -83,14 +132,20 @@
         .row {
           width: 100%;
           margin: auto;
-          .media {
-            flex-direction: column;
-            align-items: center;
-            img {
-              margin: 0 !important;
-            }
-            .media-body {
-              width: auto;
+          .media-col {
+            padding: 0;
+            .media {
+              flex-direction: column;
+              align-items: center;
+              img {
+                margin: 0 !important;
+                width: 100%;
+                height: auto;
+              }
+              .media-body {
+                width: 100%;
+                padding-left: 0;
+              }
             }
           }
         }

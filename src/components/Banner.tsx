@@ -20,7 +20,7 @@ const Banner = () => {
               </div>
               <div className='divider text-darkkhaki d-flex flex-row'>
                 <p className='line my-2 mx-2'>&nbsp;</p>
-                <p className='cutlery-icon'><i className="fa fa-cutlery"></i></p>
+                <p className='icon'><i className="fa fa-cutlery"></i></p>
                 <p className='line my-2 mx-2'>&nbsp;</p>
               </div>
               <div className='text-2 text-white'>

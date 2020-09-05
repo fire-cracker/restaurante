@@ -1,7 +1,8 @@
 .navbar {
   font-family: var(--font-family-montserrat);
-  z-index: 1 !important;
+  z-index: 999 !important;
   font-weight: 600 !important;
+  height: 6.2rem;
 
   .main-tabs {
     :hover {
@@ -41,9 +42,21 @@
 
 @media only screen and (min-width: 769px) {
     .navbar {
-        height: 99px;
         .nav-link {
             line-height: 99px !important;
           }
     }
+}
+
+// @media screen and (max-width: 600px) {
+//   .navbar {
+//     // height: 99px;
+//     position: relative;
+// }
+// }
+
+@media screen and (max-width: 1000px) {
+  .navbar {
+    position: relative !important;
+}
 }

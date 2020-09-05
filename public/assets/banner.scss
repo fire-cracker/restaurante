@@ -64,21 +64,22 @@
       font-weight: 300;
     }
   }
-  .divider {
-    & .line {
-      height: 0;
-      overflow: hidden;
-      width: 6rem;
-      border-top: 1px solid var(--darkkhaki);
-    }
-    & .cutlery-icon {
-      z-index: 8;
-      line-height: 23px;
-      border-width: 0px;
-      font-weight: 400;
-      font-size: 23px;
-      font-family: 'Open Sans';
-    }
+}
+
+.divider {
+  & .line {
+    height: 0;
+    overflow: hidden;
+    width: 6rem;
+    border-top: 1px solid var(--darkkhaki);
+  }
+  & .icon {
+    z-index: 8;
+    line-height: 23px;
+    border-width: 0px;
+    font-weight: 400;
+    font-size: 23px;
+    font-family: 'Open Sans';
   }
 }
 
