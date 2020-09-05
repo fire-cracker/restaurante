@@ -1,0 +1,41 @@
+.top-banner {
+  @include overlay-background(0.5, '/images/banner.jpeg');
+  height: 10rem;
+}
+.container-wrapper {
+  .container-body {
+    .card {
+      border-radius: 0 !important;
+      .card-body {
+        min-width: 80vw;
+        border: 1.7rem solid var(--white);
+        .row {
+          .form-col {
+            border: 0.6rem solid var(--darkkhaki);
+            padding: 5.2rem 1.9rem;
+            .reservation-header {
+              text-align: center;
+            }
+          }
+        }
+      }
+    }
+  }
+  .btn {
+    border-radius: 0;
+    outline: none;
+    border: 0;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .container-wrapper {
+    .container-body {
+      padding: 0;
+    }
+  }
+}
+
+// @media screen and (max-width: 600px) {
+
+// }

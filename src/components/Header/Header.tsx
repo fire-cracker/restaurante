@@ -16,10 +16,10 @@ const Header: FC<Props> = ({ history, executeScrollToMenu }) => {
       <Navbar.Brand href='/home'>React-Bootstrap</Navbar.Brand>
       <Navbar.Toggle aria-controls='basic-navbar-nav' />
       <Navbar.Collapse id='basic-navbar-nav'>
-        <Nav activeKey='/' className='m-auto main-tabs'>
-          <Nav.Link href='/'>HOME</Nav.Link>
+        <Nav activeKey='/home' className='m-auto main-tabs'>
+          <Nav.Link href='/home'>HOME</Nav.Link>
           <Nav.Link href='#' onClick={() => executeScrollToMenu(history)}>MENU</Nav.Link>
-          <Nav.Link href='/book-a-table'>BOOK A TABLE</Nav.Link>
+          <Nav.Link href='/reservation'>BOOK A TABLE</Nav.Link>
         </Nav>
         <Nav className='mr'>
           <Button href="/login" variant="outline-darkkhaki">LOGIN</Button>
