@@ -40,7 +40,7 @@ const ReservationPage: FC = () => {
     <Jumbotron fluid className='p-0'>
       <Container fluid>
         <Row className='top-banner'></Row>
-        <Row className='container-wrapper px-0'>
+        <Row className='reservation-wrapper px-0'>
           <Container className='container-body d-flex flex-column justify-content-center align-items-center'>
             <Card className='mt-n5'>
               <Card.Body className=''>

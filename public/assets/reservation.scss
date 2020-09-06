@@ -2,7 +2,7 @@
   @include overlay-background(0.5, '/images/banner.jpeg');
   height: 10rem;
 }
-.container-wrapper {
+.reservation-wrapper {
   .container-body {
     .card {
       border-radius: 0 !important;
@@ -29,7 +29,7 @@
 }
 
 @media screen and (max-width: 1000px) {
-  .container-wrapper {
+  .reservation-wrapper {
     .container-body {
       padding: 0;
     }
