@@ -8,9 +8,10 @@ import Button from 'react-bootstrap/Button'
 interface Props extends RouteComponentProps {
   executeScrollToMenu: (history: any)  => void,
   history: any
+  onModalShow: any
 }
 
-const Header: FC<Props> = ({ history, executeScrollToMenu }) => {
+const Header: FC<Props> = ({ history, executeScrollToMenu, onModalShow }) => {
   return (
     <Navbar bg='black' expand='lg' variant="dark" className='sticky-top'>
       <Navbar.Brand href='/home'>React-Bootstrap</Navbar.Brand>
@@ -22,7 +23,7 @@ const Header: FC<Props> = ({ history, executeScrollToMenu }) => {
           <Nav.Link href='/reservation'>BOOK A TABLE</Nav.Link>
         </Nav>
         <Nav className='mr'>
-          <Button href="/login" variant="outline-darkkhaki">LOGIN</Button>
+          <Button href="#" variant="outline-darkkhaki" onClick={() => onModalShow(history)}>LOGIN</Button>
           <Button href='/profile' variant="outline-transparent"><i className="fa fa-shopping-cart text-white"></i></Button>
         </Nav>
       </Navbar.Collapse>

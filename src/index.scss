@@ -1,4 +1,4 @@
-@import "../public/assets/custom.scss"; 
+@import '../public/assets/custom.scss';
 
 body {
   margin: 0;
@@ -11,3 +11,10 @@ body {
   color: #4d5257;
 }
 
+.btn {
+  outline: none !important;
+}
+
+a {
+  outline: none;
+}
