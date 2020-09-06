@@ -99,6 +99,7 @@ const ReservationPage: FC = () => {
                         </Form.Row>
                       </Form>
                     </Row>
+                  
                   </Col>
                   <Col lg={3}>
                     <Card>
