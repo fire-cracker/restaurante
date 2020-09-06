@@ -10,7 +10,7 @@ interface Props {
   onHide?: () => any
 }
 
-const LoginPage: FC<Props> = (props) => {
+const LoginPage: FC<Props> = ({ show }) => {
   const [validated, setValidated] = useState(false)
   const [loginState, setLoginStated] = useState(true)
   const [UserState, setUserState] = useState({
@@ -39,10 +39,9 @@ const LoginPage: FC<Props> = (props) => {
   const toggleLoginSignup = () => {
     setLoginStated(!loginState)
   }
-  console.log('state>>>>', loginState)
 
   return (
-    <Modal show={true} size='lg' aria-labelledby='contained-modal-title-vcenter' className='modal-wrapper' centered>
+    <Modal show={show} size='lg' aria-labelledby='contained-modal-title-vcenter' className='modal-wrapper' centered>
       <Row className='wrapper-row'>
         <Col className='wrapper-row-col p-3 justify-content-center align-items-center'>
           <Modal.Header className='border-0 p-0 pr-2 pt-2' closeButton>
