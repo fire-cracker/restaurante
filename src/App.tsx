@@ -1,12 +1,12 @@
 import React, { FC, useRef, RefObject } from 'react'
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import Container from 'react-bootstrap/Container'
+import { ToastContainer } from 'react-toastify';
 
 import Header from './components/Header/Header'
 import LandingPage from './views/LandingPage'
 import MenusSection from './components/Menus'
 import ReservationPage from './views/ReservationPage'
-import LoginPage from './components/LoginPage'
 
 const App: FC = () => {
   const [modalShow, setModalShow] = React.useState(false)
@@ -31,6 +31,7 @@ const App: FC = () => {
 
   return (
     <BrowserRouter>
+      <ToastContainer />
       <Container fluid className='p-0'>
         <Header executeScrollToMenu={executeScroll} onModalShow={onModalShow}/>
         <Switch>

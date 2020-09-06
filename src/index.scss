@@ -13,8 +13,10 @@ body {
 
 .btn, button {
   outline: none !important;
+  box-shadow: none;
   :focus {
-    box-shadow: 0;
+    box-shadow: none;
+    outline: none;
   }
 }
 
