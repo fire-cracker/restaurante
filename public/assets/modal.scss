@@ -4,14 +4,14 @@
     .modal-header .close {
       outline: none;
       span:first-child {
-        // border: 2px solid var(--darkkhaki);
+        border: 2px solid var(--darkkhaki);
         border-radius: 0;
-        padding: 0 .2rem;
+        padding: 0 .4rem;
         font-size: 1.9rem;
-        background-color: var(--darkkhaki);
+        color: var(--black);
       }
       :hover {
-        color: var(--white);
+        background-color: var(--darkkhaki);
       }
     }
     .wrapper-row-col {
