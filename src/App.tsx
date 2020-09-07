@@ -66,7 +66,7 @@ const App: FC<Props> = ({ setLoggedInState, getUserProfile }) => {
 
   return (
     <BrowserRouter>
-      <ToastContainer />
+      {/* <ToastContainer /> */}
       <Container fluid className="p-0">
         <Header executeScrollToMenu={executeScroll} onModalShow={onModalShow} />
         <Switch>
