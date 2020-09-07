@@ -21,51 +21,53 @@ const {
 
 const api = process.env.REACT_APP_API_URL
 
-export const setLoggedInState = (data: IUser) => ({
+export const setLoggedInState = (data: IUser): Action<IUser> => ({
   type: SET_USER_STATE,
   payload: data
 })
 
-export const loginRequestPending = () => ({
+export const loginRequestPending = (): Action<any> => ({
   type: LOGIN_REQUEST_PENDING
 })
 
-export const loginRequestSuccess = (data: IUser) => ({
+export const loginRequestSuccess = (data: IUser): Action<IUser> => ({
   type: LOGIN_REQUEST_SUCCESS,
   payload: data
 })
 
-export const loginRequestFailed = () => ({
+export const loginRequestFailed = (): Action<any> => ({
   type: LOGIN_REQUEST_FAILED
 })
 
-export const signupRequestPending = () => ({
+export const signupRequestPending = (): Action<any> => ({
   type: SIGNUP_REQUEST_PENDING
 })
 
-export const signupRequestSuccess = (data: IUser) => ({
+export const signupRequestSuccess = (data: IUser): Action<IUser> => ({
   type: SIGNUP_REQUEST_SUCCESS,
   payload: data
 })
 
-export const signupRequestFailed = () => ({
+export const signupRequestFailed = (): Action<any> => ({
   type: SIGNUP_REQUEST_FAILED
 })
 
-export const getProfileRequestPending = () => ({
+export const getProfileRequestPending = (): Action<any> => ({
   type: GET_PROFILE_REQUEST_PENDING
 })
 
-export const getProfileRequestSuccess = (data: IUser) => ({
+export const getProfileRequestSuccess = (data: IUser): Action<IUser> => ({
   type: GET_PROFILE_REQUEST_SUCCESS,
   payload: data
 })
 
-export const getProfileRequestFailed = () => ({
+export const getProfileRequestFailed = (): Action<any> => ({
   type: GET_PROFILE_REQUEST_FAILED
 })
 
-export const login = (email: string, password: string) => async (dispatch: Dispatch<Action<any>>) => {
+export const login = (email: string, password: string) => async (
+  dispatch: Dispatch<Action<any>>
+): Promise<IUser> => {
   try {
     dispatch(loginRequestPending())
     const {
@@ -83,7 +85,9 @@ export const login = (email: string, password: string) => async (dispatch: Dispa
   }
 }
 
-export const signup = (username: string, email: string, password: string) => async (dispatch: Dispatch<Action<any>>) => {
+export const signup = (username: string, email: string, password: string) => async (
+  dispatch: Dispatch<Action<any>>
+): Promise<IUser> => {
   try {
     dispatch(signupRequestPending())
     const {
@@ -101,7 +105,9 @@ export const signup = (username: string, email: string, password: string) => asy
   }
 }
 
-export const getUserProfile = (userId: string) => async (dispatch: Dispatch<Action<any>>) => {
+export const getUserProfile = (userId: string) => async (
+  dispatch: Dispatch<Action<any>>
+): Promise<IUser> => {
   try {
     dispatch(getProfileRequestPending())
     const {
@@ -118,7 +124,7 @@ export const getUserProfile = (userId: string) => async (dispatch: Dispatch<Acti
   }
 }
 
-export const logout = () => async (dispatch: Dispatch<Action<any>>) => {
+export const logout = () => async (dispatch: Dispatch<Action<any>>): Promise<void> => {
   localStorage.clear()
   dispatch({ type: LOGOUT_REQUEST_SUCCESS })
 }

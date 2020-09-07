@@ -20,14 +20,21 @@
     }
   },
   "plugins": ["@typescript-eslint", "react", "react-hooks", "prettier", "jest", "import"],
-  "extends": ["eslint:recommended", "plugin:@typescript-eslint/eslint-recommended", "plugin:@typescript-eslint/recommended", "prettier/@typescript-eslint", "plugin:react/recommended", "plugin:jest/recommended"],
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended",
+    "prettier/@typescript-eslint",
+    "plugin:react/recommended",
+    "plugin:jest/recommended"
+  ],
   "rules": {
     "prettier/prettier": [
       1,
       {
         "semi": false,
         "trailingComma": "none",
-        "printWidth": 130,
+        "printWidth": 100,
         "tabWidth": 2,
         "arrowParens": "avoid",
         "singleQuote": true,
@@ -76,6 +83,7 @@
     "@typescript-eslint/no-var-requires": 0,
     "@typescript-eslint/no-empty-function": 0,
     "@typescript-eslint/ban-ts-comment": 0,
-    "@typescript-eslint/no-non-null-assertion": 0
+    "@typescript-eslint/no-non-null-assertion": 0,
+    "react/prop-types": 0
   }
 }

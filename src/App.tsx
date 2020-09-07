@@ -18,7 +18,7 @@ interface Props {
   getUserProfile: (id: string) => any
 }
 
-const App: FC<Props> = ({ userState, setLoggedInState, getUserProfile }) => {
+const App: FC<Props> = ({ setLoggedInState, getUserProfile }) => {
   const [modalShow, setModalShow] = React.useState(false)
   const menuRef: RefObject<any> = useRef(null)
 
@@ -26,21 +26,21 @@ const App: FC<Props> = ({ userState, setLoggedInState, getUserProfile }) => {
     if (localStorage.token) {
       const { token } = localStorage
 
-      let id: string = ''
+      let id = ''
       try {
-        ({ id } = JSON.parse(window.atob(token.split('.')[1])))
+        ;({ id } = JSON.parse(window.atob(token.split('.')[1])))
       } catch (error) {
         localStorage.clear()
       }
 
       if (id) {
-        const setUserState = async() => {
+        const setUserState = async () => {
           const user = await getUserProfile(id)
           if (user) await setLoggedInState(user)
           else {
             localStorage.clear()
           }
-        };
+        }
         setUserState()
       }
     }
@@ -67,12 +67,22 @@ const App: FC<Props> = ({ userState, setLoggedInState, getUserProfile }) => {
   return (
     <BrowserRouter>
       <ToastContainer />
-      <Container fluid className='p-0'>
+      <Container fluid className="p-0">
         <Header executeScrollToMenu={executeScroll} onModalShow={onModalShow} />
         <Switch>
-          <Route path='/home' render={(props) => <LandingPage {...props} menuRef={menuRef} modalShow={modalShow} onModalHide={() => setModalShow(false)} />} />
-          <Route exact path='/home/menu' render={() => <MenusSection menuRef={menuRef} />} />
-          <Route exact path='/reservation' render={() => <ReservationPage />} />
+          <Route
+            path="/home"
+            render={props => (
+              <LandingPage
+                {...props}
+                menuRef={menuRef}
+                modalShow={modalShow}
+                onModalHide={() => setModalShow(false)}
+              />
+            )}
+          />
+          <Route exact path="/home/menu" render={() => <MenusSection menuRef={menuRef} />} />
+          <Route exact path="/reservation" render={() => <ReservationPage />} />
         </Switch>
       </Container>
     </BrowserRouter>
