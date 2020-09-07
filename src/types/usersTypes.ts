@@ -1,8 +1,10 @@
+export type IRole =  'customer' | 'admin'
+
 export interface IUser {
   id: string
   username: string
   email: string
-  role: 'customer' | 'admin'
+  role: IRole
 }
 
 export interface IUserState {

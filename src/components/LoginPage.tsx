@@ -9,8 +9,8 @@ import ClipLoader from 'react-spinners/ClipLoader'
 import { IUser, IUserState } from '../types/usersTypes'
 
 interface IProps {
-  show?: boolean
-  onHide?: () => any
+  show: boolean
+  onHide: () => any
   login: (email: string, password: string) => Promise<IUser>
   signup: (username: string, email: string, password: string) => Promise<IUser>
   user: IUserState
@@ -22,7 +22,7 @@ interface IState {
   password: string
 }
 
-const LoginPage: FC<IProps> = ({ show, login, signup, user }) => {
+const LoginPage: FC<IProps> = ({ show, onHide, login, signup, user }) => {
   const [validated, setValidated] = useState(false)
   const [loginState, setLoginStated] = useState(true)
   const [userState, setUserState] = useState({
@@ -47,9 +47,11 @@ const LoginPage: FC<IProps> = ({ show, login, signup, user }) => {
       return
     }
     setValidated(true)
-    console.log('user>>>>>', user)
-    if (loginState) await login(email, password)
-    else if (!loginState) await signup(username, email, password)
+    let newUser;
+    if (loginState) newUser = await login(email, password)
+    else if (!loginState) newUser = await signup(username, email, password)
+    console.log('state>>>>', newUser)
+    if (user) onHide()
   }
 
   const toggleLoginSignup = () => {

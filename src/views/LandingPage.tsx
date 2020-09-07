@@ -16,19 +16,19 @@ interface Props extends RouteComponentProps {
   onModalHide: () => any
   login: (email: string, password: string) => Promise<IUser>
   signup: (username: string, email: string, password: string) => Promise<IUser>
-  user: IUserState
+  userState: IUserState
 }
-const LandingPage: FC<Props> = ({ menuRef, modalShow, onModalHide, login, signup, user }) => {
+const LandingPage: FC<Props> = ({ menuRef, modalShow, onModalHide, login, signup, userState }) => {
   return (
     <Container fluid className='home-wrapper p-0'>
       <Banner />
       <MenusSection menuRef={menuRef} />
-      <LoginPage show={modalShow} onHide={onModalHide} login={login} signup={signup} user={user} />
+      <LoginPage show={modalShow} onHide={onModalHide} login={login} signup={signup} user={userState} />
     </Container>
   )
 }
 
-const mapStateToProps = (state: IRootState) => ({ user: state.user })
+const mapStateToProps = (state: IRootState) => ({ userState: state.userState })
 const mapDispatchToProps = ({ login, signup })
 
 export default connect(mapStateToProps, mapDispatchToProps)(LandingPage)

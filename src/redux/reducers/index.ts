@@ -4,9 +4,9 @@ import usersReducer from './users';
 import { IUserState } from '../../types/usersTypes'
 
 export interface IRootState {
-  user: IUserState
+  userState: IUserState
 }
 
 export default combineReducers<IRootState>({
-  user: usersReducer
+  userState: usersReducer
 });
