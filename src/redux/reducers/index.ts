@@ -1,7 +1,7 @@
-import { combineReducers } from 'redux';
+import { combineReducers } from 'redux'
 
-import usersReducer from './users';
 import { IUserState } from '../../types/usersTypes'
+import usersReducer from './users'
 
 export interface IRootState {
   userState: IUserState
@@ -9,4 +9,4 @@ export interface IRootState {
 
 export default combineReducers<IRootState>({
   userState: usersReducer
-});
+})
