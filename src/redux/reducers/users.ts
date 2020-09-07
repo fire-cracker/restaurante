@@ -43,7 +43,7 @@ export default (state = initialState, action: Action<any>): IUserState => {
     case LOGIN_REQUEST_FAILED:
       return {
         ...state,
-        user: action.payload,
+        isLoggedIn: false,
         logingIn: false
       }
 
