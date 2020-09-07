@@ -1,4 +1,4 @@
-export type IRole =  'customer' | 'admin'
+export type IRole = 'customer' | 'admin'
 
 export interface IUser {
   id: string
