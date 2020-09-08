@@ -3,7 +3,7 @@ export interface IMenu {
   name: string
   image: string
   price: number
-  recipe: []
+  recipe: string
   type: string
 }
 

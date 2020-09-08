@@ -5,7 +5,12 @@ axios.interceptors.request.use(
     const token = (() => window.localStorage.getItem('token'))()
     return Object.assign({}, config, { headers: { Authorization: token } })
   },
-  error => Promise.reject(error)
+  error => {
+    if (error.response.message === 'Network Error') Promise.reject(error.response)
+    else {
+      Promise.reject(error.response.data.data)
+    }
+  }
 )
 
 export default axios

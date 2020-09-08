@@ -1,4 +1,5 @@
 import React, { FC, useState } from 'react'
+import { connect } from 'react-redux'
 import Jumbotron from 'react-bootstrap/Jumbotron'
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
@@ -7,15 +8,19 @@ import Col from 'react-bootstrap/Col'
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
 
-const ReservationPage: FC = () => {
+import { addReservation } from '../redux/actions/reservations'
+
+interface IProps {
+  addReservation: () => any
+}
+
+const ReservationPage: FC<IProps> = ({ addReservation }) => {
   const [validated, setValidated] = useState(false)
-  const [ReservationState, setReservationState] = useState({
-    person: 1,
+  const [reservationState, setReservationState] = useState({
     date: '',
     time: '',
-    type: '',
-    cost: '',
-    order: []
+    persons: 1,
+    type: ''
   })
 
   const onhandleChange = ({
@@ -27,7 +32,7 @@ const ReservationPage: FC = () => {
       ...prevState,
       [name]: value
     }))
-    console.log('state>>>>', ReservationState)
+    console.log('state>>>>', reservationState)
   }
 
   const handleSubmit = (event: any) => {
@@ -71,28 +76,34 @@ const ReservationPage: FC = () => {
                     <Row className="justify-content-center align-items-center">
                       <Form noValidate validated={validated} onSubmit={handleSubmit}>
                         <Form.Row>
-                          <Form.Group as={Col} controlId="formGridState">
+                          <Form.Group as={Col}>
                             <Form.Label></Form.Label>
-                            <Form.Control as="select" onChange={onhandleChange}>
+                            <Form.Control as="select" name="persons" onChange={onhandleChange}>
                               <option>1 person</option>
-                              <option>2 person</option>
+                              <option>2 persons</option>
+                              <option>3 persons</option>
+                              <option>4 persons</option>
+                              <option>5 persons</option>
+                              <option>6 persons</option>
                             </Form.Control>
                           </Form.Group>
-                          <Form.Group as={Col} md="4" controlId="validationCustom01">
+                          <Form.Group as={Col} md="4">
                             <Form.Label></Form.Label>
                             <Form.Control
                               required
-                              type="text"
+                              name="date"
+                              type="date"
                               placeholder="Date"
                               onChange={onhandleChange}
                             />
                             <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
                           </Form.Group>
-                          <Form.Group as={Col} md="4" controlId="validationCustom02">
+                          <Form.Group as={Col} md="4">
                             <Form.Label></Form.Label>
                             <Form.Control
                               required
-                              type="text"
+                              name="time"
+                              type="time"
                               placeholder="Time"
                               onChange={onhandleChange}
                             />
@@ -100,9 +111,9 @@ const ReservationPage: FC = () => {
                           </Form.Group>
                         </Form.Row>
                         <Form.Row>
-                          <Form.Group as={Col} controlId="formGridState">
+                          <Form.Group as={Col}>
                             <Form.Label></Form.Label>
-                            <Form.Control as="select" onChange={onhandleChange}>
+                            <Form.Control as="select" name="type" onChange={onhandleChange}>
                               <option>Breakfast</option>
                               <option>Lunch</option>
                               <option>Dinner</option>
@@ -132,4 +143,7 @@ const ReservationPage: FC = () => {
   )
 }
 
-export default ReservationPage
+const mapStateToProps = () => ({})
+const mapDispatchToProps = { addReservation }
+
+export default connect(mapStateToProps, mapDispatchToProps)(ReservationPage)
