@@ -1,4 +1,5 @@
 import React, { FC, useState } from 'react'
+import { RouteComponentProps } from 'react-router'
 import { connect } from 'react-redux'
 import Jumbotron from 'react-bootstrap/Jumbotron'
 import Container from 'react-bootstrap/Container'
@@ -8,19 +9,18 @@ import Col from 'react-bootstrap/Col'
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
 
-import { addReservation } from '../redux/actions/reservations'
-
-interface IProps {
-  addReservation: () => any
+interface IProps extends RouteComponentProps {
+  history: any
+  setReservation: any
 }
 
-const ReservationPage: FC<IProps> = ({ addReservation }) => {
+const ReservationPage: FC<IProps> = ({ history, setReservation }) => {
   const [validated, setValidated] = useState(false)
   const [reservationState, setReservationState] = useState({
     date: '',
     time: '',
     persons: 1,
-    type: ''
+    type: 'breakfast'
   })
 
   const onhandleChange = ({
@@ -43,6 +43,8 @@ const ReservationPage: FC<IProps> = ({ addReservation }) => {
     }
 
     setValidated(true)
+    setReservation(reservationState)
+    history.push('/checkout')
   }
 
   return (
@@ -144,6 +146,6 @@ const ReservationPage: FC<IProps> = ({ addReservation }) => {
 }
 
 const mapStateToProps = () => ({})
-const mapDispatchToProps = { addReservation }
+const mapDispatchToProps = {}
 
 export default connect(mapStateToProps, mapDispatchToProps)(ReservationPage)

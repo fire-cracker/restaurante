@@ -8,6 +8,12 @@ export interface IReservation {
   persons: number
   stripeId: string
 }
+export interface INewReservation {
+  date: string
+  time: string
+  type: string
+  persons: number
+}
 
 export interface IReservationState {
   reservation: IReservation | null

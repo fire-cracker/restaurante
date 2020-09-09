@@ -3,8 +3,7 @@ import { toast } from 'react-toastify'
 
 import axios from '../../utils/axiosConfig'
 import { ActionType, Action } from '../../types/actionsTypes'
-import { IUser } from '../../types/usersTypes'
-import { IMenu } from '../../types/menusTypes'
+import { INewReservation } from '../../types/reservationsTypes'
 
 const {
   ADD_RESERVATION_REQUEST_PENDING,
@@ -18,7 +17,7 @@ export const addReservationRequestPending = (): Action<any> => ({
   type: ADD_RESERVATION_REQUEST_PENDING
 })
 
-export const addReservationRequestSuccess = (data: IUser): Action<IUser> => ({
+export const addReservationRequestSuccess = (data: Record<string, unknown>): Action<any> => ({
   type: ADD_RESERVATION_REQUEST_SUCCESS,
   payload: data
 })
@@ -27,19 +26,21 @@ export const addReservationRequestFailed = (): Action<any> => ({
   type: ADD_RESERVATION_REQUEST_FAILED
 })
 
-export const addReservation = () => async (
+export const addReservation = (reservation: any, stripeToken: string) => async (
   dispatch: Dispatch<Action<any>>
-): Promise<{ menus: IMenu[]; count: number }> => {
+): Promise<any> => {
   try {
     dispatch(addReservationRequestPending())
     const {
-      data: { data }
-    } = await axios.post(`${api}/reservations`)
-    dispatch(addReservationRequestSuccess(data))
-    return data
+      data: {
+        data: { stripeCharge }
+      }
+    } = await axios.post(`${api}/reservations`, { ...reservation, stripeToken })
+    dispatch(addReservationRequestSuccess(stripeCharge))
+    return stripeCharge
   } catch (error) {
     dispatch(addReservationRequestFailed())
-    toast.error(error.response.data.data.message)
+    toast.error(error.message)
     throw error
   }
 }

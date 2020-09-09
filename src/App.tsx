@@ -1,13 +1,14 @@
-import React, { FC, useRef, RefObject, useEffect } from 'react'
+import React, { FC, useRef, RefObject, useEffect, useState } from 'react'
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import { connect } from 'react-redux'
 import Container from 'react-bootstrap/Container'
-import { ToastContainer } from 'react-toastify'
+// import { ToastContainer } from 'react-toastify'
 
 import Header from './components/Header'
-import LandingPage from './views/LandingPage'
 import MenusSection from './components/Menus'
+import LandingPage from './views/LandingPage'
 import ReservationPage from './views/ReservationPage'
+import PaymentPage from './views/Checkout'
 import { IRootState } from './redux/reducers'
 import { IUser, IUserState } from './types/usersTypes'
 import { setLoggedInState, getUserProfile } from './redux/actions/users'
@@ -19,7 +20,8 @@ interface Props {
 }
 
 const App: FC<Props> = ({ setLoggedInState, getUserProfile }) => {
-  const [modalShow, setModalShow] = React.useState(false)
+  const [modalShow, setModalShow] = useState(false)
+  const [reservation, setReservation] = useState(null)
   const menuRef: RefObject<any> = useRef(null)
 
   useEffect(() => {
@@ -82,7 +84,16 @@ const App: FC<Props> = ({ setLoggedInState, getUserProfile }) => {
             )}
           />
           <Route exact path="/home/menu" render={() => <MenusSection menuRef={menuRef} />} />
-          <Route exact path="/reservation" render={() => <ReservationPage />} />
+          <Route
+            exact
+            path="/reservation"
+            render={props => <ReservationPage {...props} setReservation={setReservation} />}
+          />
+          <Route
+            exact
+            path="/checkout"
+            render={props => <PaymentPage {...props} reservation={reservation} />}
+          />
         </Switch>
       </Container>
     </BrowserRouter>
