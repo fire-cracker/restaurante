@@ -6,6 +6,7 @@ import Container from 'react-bootstrap/Container'
 
 import Header from './components/Header'
 import MenusSection from './components/Menus'
+import LoginPage from './components/LoginPage'
 import LandingPage from './views/LandingPage'
 import ReservationPage from './views/ReservationPage'
 import PaymentPage from './views/Checkout'
@@ -19,13 +20,13 @@ interface Props {
   getUserProfile: (id: string) => any
 }
 
-const App: FC<Props> = ({ setLoggedInState, getUserProfile }) => {
+const App: FC<Props> = ({ setLoggedInState, getUserProfile, userState }) => {
   const [modalShow, setModalShow] = useState(false)
   const [reservation, setReservation] = useState(null)
   const menuRef: RefObject<any> = useRef(null)
 
   useEffect(() => {
-    if (localStorage.token) {
+    if (!userState.isLoggedIn && localStorage.token) {
       const { token } = localStorage
 
       let id = ''
@@ -46,12 +47,12 @@ const App: FC<Props> = ({ setLoggedInState, getUserProfile }) => {
         setUserState()
       }
     }
-  }, [getUserProfile, setLoggedInState])
+  }, [getUserProfile, setLoggedInState, userState])
 
   const scrollToRef = (history: any, ref: any) => {
     if (ref.current) ref.current.scrollIntoView({ behavior: 'smooth', block: 'start' })
     else {
-      history.push('/home/menu')
+      history.push('/menu')
       setTimeout(() => {
         ref.current.scrollIntoView({ behavior: 'smooth', block: 'start' })
       }, 200)
@@ -62,38 +63,31 @@ const App: FC<Props> = ({ setLoggedInState, getUserProfile }) => {
     scrollToRef(history, menuRef)
   }
 
-  const onModalShow = () => {
-    setModalShow(true)
-  }
-
   return (
     <BrowserRouter>
       {/* <ToastContainer /> */}
       <Container fluid className="p-0">
-        <Header executeScrollToMenu={executeScroll} onModalShow={onModalShow} />
+        <Header executeScrollToMenu={executeScroll} onModalShow={() => setModalShow(true)} />
+        <LoginPage show={modalShow} onHide={() => setModalShow(false)} />
         <Switch>
-          <Route
-            path="/home"
-            render={props => (
-              <LandingPage
-                {...props}
-                menuRef={menuRef}
-                modalShow={modalShow}
-                onModalHide={() => setModalShow(false)}
-              />
-            )}
-          />
-          <Route exact path="/home/menu" render={() => <MenusSection menuRef={menuRef} />} />
           <Route
             exact
             path="/reservation"
-            render={props => <ReservationPage {...props} setReservation={setReservation} />}
+            render={props => (
+              <ReservationPage
+                {...props}
+                setReservation={setReservation}
+                onModalShow={() => setModalShow(true)}
+              />
+            )}
           />
           <Route
             exact
             path="/checkout"
             render={props => <PaymentPage {...props} reservation={reservation} />}
           />
+          <Route path="/" render={props => <LandingPage {...props} menuRef={menuRef} />} />
+          <Route exact path="/menu" render={() => <MenusSection menuRef={menuRef} />} />
         </Switch>
       </Container>
     </BrowserRouter>

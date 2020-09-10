@@ -1,5 +1,6 @@
 import React, { FC, useState } from 'react'
 import { RouteComponentProps } from 'react-router'
+import { Redirect } from 'react-router-dom'
 import { connect } from 'react-redux'
 import Jumbotron from 'react-bootstrap/Jumbotron'
 import Container from 'react-bootstrap/Container'
@@ -9,12 +10,17 @@ import Col from 'react-bootstrap/Col'
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
 
+import { IRootState } from '../redux/reducers'
+import { IUserState } from '../types/usersTypes'
+
 interface IProps extends RouteComponentProps {
   history: any
   setReservation: any
+  userState: IUserState
+  onModalShow: () => void
 }
 
-const ReservationPage: FC<IProps> = ({ history, setReservation }) => {
+const ReservationPage: FC<IProps> = ({ history, setReservation, userState, onModalShow }) => {
   const [validated, setValidated] = useState(false)
   const [reservationState, setReservationState] = useState({
     date: '',
@@ -22,6 +28,11 @@ const ReservationPage: FC<IProps> = ({ history, setReservation }) => {
     persons: 1,
     type: 'breakfast'
   })
+
+  if (!userState.isLoggedIn) {
+    onModalShow()
+    return <Redirect to="/home" />
+  }
 
   const onhandleChange = ({
     target: { name, value }
@@ -32,7 +43,6 @@ const ReservationPage: FC<IProps> = ({ history, setReservation }) => {
       ...prevState,
       [name]: value
     }))
-    console.log('state>>>>', reservationState)
   }
 
   const handleSubmit = (event: any) => {
@@ -145,7 +155,7 @@ const ReservationPage: FC<IProps> = ({ history, setReservation }) => {
   )
 }
 
-const mapStateToProps = () => ({})
+const mapStateToProps = (state: IRootState) => ({ userState: state.userState })
 const mapDispatchToProps = {}
 
 export default connect(mapStateToProps, mapDispatchToProps)(ReservationPage)

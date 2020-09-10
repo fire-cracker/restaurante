@@ -1,4 +1,5 @@
 import React, { FC, useState, ReactElement } from 'react'
+import { connect } from 'react-redux'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Form from 'react-bootstrap/Form'
@@ -6,20 +7,22 @@ import Button from 'react-bootstrap/Button'
 import Modal from 'react-bootstrap/Modal'
 import ClipLoader from 'react-spinners/ClipLoader'
 
+import { login, signup } from '../redux/actions/users'
+import { IRootState } from '../redux/reducers'
 import { IUser, IUserState } from '../types/usersTypes'
 
 interface IProps {
   show: boolean
-  onHide: () => any
+  onHide: () => void
   login: (email: string, password: string) => Promise<IUser>
   signup: (username: string, email: string, password: string) => Promise<IUser>
-  user: IUserState
+  userState: IUserState
 }
 
-const LoginPage: FC<IProps> = ({ show, onHide, login, signup, user }): ReactElement => {
+const LoginPage: FC<IProps> = ({ show, onHide, login, signup, userState }): ReactElement => {
   const [validated, setValidated] = useState(false)
   const [loginState, setLoginStated] = useState(true)
-  const [userState, setUserState] = useState({
+  const [userDetails, setUserDetails] = useState({
     username: '',
     email: '',
     password: ''
@@ -30,7 +33,7 @@ const LoginPage: FC<IProps> = ({ show, onHide, login, signup, user }): ReactElem
   }: {
     target: { name: string; value: any }
   }) => {
-    setUserState(prevState => ({
+    setUserDetails(prevState => ({
       ...prevState,
       [name]: value
     }))
@@ -39,14 +42,15 @@ const LoginPage: FC<IProps> = ({ show, onHide, login, signup, user }): ReactElem
   const handleSubmit = async (event: any) => {
     event.preventDefault()
     const form = event.currentTarget
-    const { email, password, username } = userState
+    const { email, password, username } = userDetails
     if (form && form.checkValidity() === false) {
       event.stopPropagation()
       return
     }
     setValidated(true)
-    if (loginState) await login(email, password)
-    else if (!loginState) await signup(username, email, password)
+    let user
+    if (loginState) user = await login(email, password)
+    else if (!loginState) user = await signup(username, email, password)
     if (user) onHide()
   }
 
@@ -57,6 +61,7 @@ const LoginPage: FC<IProps> = ({ show, onHide, login, signup, user }): ReactElem
   return (
     <Modal
       show={show}
+      onHide={onHide}
       size="lg"
       aria-labelledby="contained-modal-title-vcenter"
       className="modal-wrapper"
@@ -119,7 +124,7 @@ const LoginPage: FC<IProps> = ({ show, onHide, login, signup, user }): ReactElem
                   </Form.Row>
                   <Form.Row className="justify-content-center align-items-center">
                     <Button className="bg-black border-0 rounded-0" type="submit">
-                      {user.logingIn ? (
+                      {userState.logingIn ? (
                         <ClipLoader size={30} color={'#00acc1'} loading={true} />
                       ) : loginState ? (
                         'Login'
@@ -144,4 +149,7 @@ const LoginPage: FC<IProps> = ({ show, onHide, login, signup, user }): ReactElem
   )
 }
 
-export default LoginPage
+const mapStateToProps = (state: IRootState) => ({ userState: state.userState })
+const mapDispatchToProps = { login, signup }
+
+export default connect(mapStateToProps, mapDispatchToProps)(LoginPage)

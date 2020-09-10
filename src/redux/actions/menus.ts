@@ -39,7 +39,7 @@ export const getMenus = () => async (
     return data
   } catch (error) {
     dispatch(getMenusRequestFailed())
-    toast.error(error.response.data.data.message)
+    toast.error(error.message)
     throw error
   }
 }
