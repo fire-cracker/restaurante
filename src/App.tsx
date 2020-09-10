@@ -5,7 +5,6 @@ import Container from 'react-bootstrap/Container'
 // import { ToastContainer } from 'react-toastify'
 
 import Header from './components/Header'
-import MenusSection from './components/Menus'
 import LoginPage from './components/LoginPage'
 import LandingPage from './views/LandingPage'
 import ReservationPage from './views/ReservationPage'
@@ -87,7 +86,6 @@ const App: FC<Props> = ({ setLoggedInState, getUserProfile, userState }) => {
             render={props => <PaymentPage {...props} reservation={reservation} />}
           />
           <Route path="/:id?" render={props => <LandingPage {...props} menuRef={menuRef} />} />
-          {/* <Route exact path="/menu" render={() => <MenusSection menuRef={menuRef} />} /> */}
         </Switch>
       </Container>
     </BrowserRouter>

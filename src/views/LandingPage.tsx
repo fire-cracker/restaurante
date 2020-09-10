@@ -1,12 +1,5 @@
 import React, { FC, RefObject } from 'react'
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link,
-  useRouteMatch,
-  useParams
-} from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import Container from 'react-bootstrap/Container'
 
 import Banner from '../components/Banner'
@@ -17,7 +10,6 @@ interface Props {
 }
 const LandingPage: FC<Props> = ({ menuRef }) => {
   const { id } = useParams()
-  console.log('id>>>>', id)
   if (!id) window.scrollTo(0, 0)
 
   return (
