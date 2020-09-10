@@ -80,7 +80,7 @@ export const login = (email: string, password: string) => async (
     return user
   } catch (error) {
     dispatch(loginRequestFailed())
-    toast.error(error.response.data.data.message)
+    toast.error(error.message)
     throw error
   }
 }
@@ -100,7 +100,7 @@ export const signup = (username: string, email: string, password: string) => asy
     return user
   } catch (error) {
     dispatch(signupRequestFailed())
-    toast.error(error.response.data.data.message)
+    toast.error(error.message)
     throw error
   }
 }
@@ -118,7 +118,6 @@ export const getUserProfile = (userId: string) => async (
     dispatch(getProfileRequestSuccess(user))
     return user
   } catch (error) {
-    // console.log('error>>>', error.message)
     dispatch(getProfileRequestFailed())
     toast.error(error.message)
     throw error

@@ -1,5 +1,5 @@
 import React, { FC, ReactElement } from 'react'
-import { withRouter } from 'react-router-dom'
+import { withRouter, Link } from 'react-router-dom'
 import { RouteComponentProps } from 'react-router'
 import { connect } from 'react-redux'
 import Nav from 'react-bootstrap/Nav'
@@ -25,15 +25,19 @@ const Header: FC<Props> = ({
   logout
 }): ReactElement => (
   <Navbar bg="black" expand="lg" variant="dark" className="sticky-top">
-    <Navbar.Brand href="/home">React-Bootstrap</Navbar.Brand>
+    <Navbar.Brand href="/">React-Bootstrap</Navbar.Brand>
     <Navbar.Toggle aria-controls="basic-navbar-nav" />
     <Navbar.Collapse id="basic-navbar-nav">
-      <Nav activeKey="/home" className="m-auto main-tabs">
-        <Nav.Link href="/home">HOME</Nav.Link>
-        <Nav.Link href="#" onClick={() => executeScrollToMenu(history)}>
+      <Nav defaultActiveKey="home" className="m-auto main-tabs">
+        <Nav.Link as={Link} to="/" eventKey="home">
+          HOME
+        </Nav.Link>
+        <Nav.Link as={Link} to="/menu" eventKey="menu" onClick={() => executeScrollToMenu(history)}>
           MENU
         </Nav.Link>
-        <Nav.Link href="/reservation">BOOK A TABLE</Nav.Link>
+        <Nav.Link as={Link} eventKey="reservation" to="/reservation">
+          BOOK A TABLE
+        </Nav.Link>
       </Nav>
       <Nav className="mr">
         {userState.isLoggedIn ? (
