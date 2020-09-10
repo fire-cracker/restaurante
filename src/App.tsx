@@ -86,8 +86,8 @@ const App: FC<Props> = ({ setLoggedInState, getUserProfile, userState }) => {
             path="/checkout"
             render={props => <PaymentPage {...props} reservation={reservation} />}
           />
-          <Route path="/" render={props => <LandingPage {...props} menuRef={menuRef} />} />
-          <Route exact path="/menu" render={() => <MenusSection menuRef={menuRef} />} />
+          <Route path="/:id?" render={props => <LandingPage {...props} menuRef={menuRef} />} />
+          {/* <Route exact path="/menu" render={() => <MenusSection menuRef={menuRef} />} /> */}
         </Switch>
       </Container>
     </BrowserRouter>
