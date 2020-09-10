@@ -1,6 +1,5 @@
-import React, { FC, useState } from 'react'
+import React, { FC, useState, useEffect } from 'react'
 import { RouteComponentProps } from 'react-router'
-import { Redirect } from 'react-router-dom'
 import { connect } from 'react-redux'
 import Jumbotron from 'react-bootstrap/Jumbotron'
 import Container from 'react-bootstrap/Container'
@@ -29,10 +28,12 @@ const ReservationPage: FC<IProps> = ({ history, setReservation, userState, onMod
     type: 'breakfast'
   })
 
-  if (!userState.isLoggedIn) {
-    onModalShow()
-    return <Redirect to="/home" />
-  }
+  useEffect(() => {
+    if (!userState.isLoggedIn) {
+      onModalShow()
+      history.push('/')
+    }
+  })
 
   const onhandleChange = ({
     target: { name, value }

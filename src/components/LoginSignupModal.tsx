@@ -19,7 +19,7 @@ interface IProps {
   userState: IUserState
 }
 
-const LoginPage: FC<IProps> = ({ show, onHide, login, signup, userState }): ReactElement => {
+const LoginSignupModal: FC<IProps> = ({ show, onHide, login, signup, userState }): ReactElement => {
   const [validated, setValidated] = useState(false)
   const [loginState, setLoginStated] = useState(true)
   const [userDetails, setUserDetails] = useState({
@@ -152,4 +152,4 @@ const LoginPage: FC<IProps> = ({ show, onHide, login, signup, userState }): Reac
 const mapStateToProps = (state: IRootState) => ({ userState: state.userState })
 const mapDispatchToProps = { login, signup }
 
-export default connect(mapStateToProps, mapDispatchToProps)(LoginPage)
+export default connect(mapStateToProps, mapDispatchToProps)(LoginSignupModal)

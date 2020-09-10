@@ -5,7 +5,7 @@ import Container from 'react-bootstrap/Container'
 // import { ToastContainer } from 'react-toastify'
 
 import Header from './components/Header'
-import LoginPage from './components/LoginPage'
+import LoginSignupModal from './components/LoginSignupModal'
 import LandingPage from './views/LandingPage'
 import ReservationPage from './views/ReservationPage'
 import PaymentPage from './views/Checkout'
@@ -67,7 +67,7 @@ const App: FC<Props> = ({ setLoggedInState, getUserProfile, userState }) => {
       {/* <ToastContainer /> */}
       <Container fluid className="p-0">
         <Header executeScrollToMenu={executeScroll} onModalShow={() => setModalShow(true)} />
-        <LoginPage show={modalShow} onHide={() => setModalShow(false)} />
+        <LoginSignupModal show={modalShow} onHide={() => setModalShow(false)} />
         <Switch>
           <Route
             exact
