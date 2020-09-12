@@ -1,6 +1,51 @@
+# Restauranté
+
 [![Build Status](https://travis-ci.org/fire-cracker/restaurante.svg?branch=master)](https://travis-ci.org/fire-cracker/restaurante)[![Coverage Status](https://coveralls.io/repos/github/fire-cracker/restaurante/badge.svg?branch=master)](https://coveralls.io/github/fire-cracker/restaurante?branch=master)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Table of Contents
+
+- [Project Overview](#Project-Overview)
+- [Features](#Features)
+- [Demo](#Demo)
+- [Dependencies](#Dependencies)
+- [Setup](#Setup)
+- [Contributing](#contributing)
+- [License](#License)
+
+## Project Overview
+
+**Restauranté** is an Application which shows the restaurant menu and allows user to book a reservation. It was built using `React` , `Scss` and `Stripe`
+
+## Features
+
+- Checkout Restautant Menu.
+- Book a Reservation.
+
+## Demo
+
+Visit [App on Heroku](https://firecracker-directory-app.herokuapp.com/)
+
+## Dependencies
+
+- [Node](https://nodejs.org/en/download/) - A Javascript runtime environment.
+- [React](https://reactjs.org/) - A Javascript library for building user interfaces.
+- [React Testing Library](https://testing-library.com/docs) - Light-weight solution for testing React components
+- [Stripe](https://stripe.com/docs/stripe-js/react) - React components for Stripe.js and Stripe Elements
+- A package manager - [yarn](https://yarnpkg.com/lang/en/) or [NPM](https://www.npmjs.com/)
+
+## Setup
+
+- \$ git clone `https://github.com/fire-cracker/restaurante.git`
+- \$ cd restaurante
+- Add env file and setup using the env.sample file
+
+#### To install dependencies:
+
+```
+$ npm install or $ yarn install
+```
+
+This will install all the requirements defined in the `package.json` file inside the directory-app folder.
 
 ## Available Scripts
 
@@ -27,20 +72,19 @@ It correctly bundles React in production mode and optimizes the build for the be
 The build is minified and the filenames include the hashes.<br />
 Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `yarn eject`
+## Contributing
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+> Feel free to 🍴 fork this repository
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+> 👯 Clone this repository to your local machine using `https://github.com/fire-cracker/restaurante.git`
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+> Make Contributions
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+> 🔃 Create a new pull request using `https://github.com/oyedejipeace/restaurante/compare`
 
-## Learn More
+## License
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+![GitHub](https://img.shields.io/github/license/mashape/apistatus.svg)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- Copyright 2018 © <a href="" target="_blank">Restauranté</a>
