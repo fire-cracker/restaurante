@@ -29,7 +29,6 @@ it('Should handle GET_MENUS_REQUEST_SUCCESS', () => {
     type: ActionType.GET_MENUS_REQUEST_SUCCESS,
     payload: { menus, count: 3 }
   })
-  console.log('statre>>>>', state)
   expect(state).toEqual(menuState)
 })
 

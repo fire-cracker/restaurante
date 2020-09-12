@@ -38,7 +38,7 @@
     "test": "react-scripts test --watchAll=false -u --coverage",
     "eject": "react-scripts eject",
     "lint": "eslint . --ext .ts",
-    "coverage": "nyc report --reporter=text-lcov | coveralls"
+    "coverage": "cat ./coverage/lcov.info | coveralls"
   },
   "eslintConfig": {
     "extends": "react-app"
