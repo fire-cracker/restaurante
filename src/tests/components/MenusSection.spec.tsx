@@ -7,7 +7,7 @@ import thunk from 'redux-thunk'
 
 import MenusSection from '../../components/Menus'
 import { IMenu } from '../../types/menusTypes'
-import { menus } from '../mocks/menus.mocks'
+import { menus } from '../mocks/menus.mock'
 
 jest.mock('../../utils/axiosConfig')
 jest.mock('../../redux/actions/menus')

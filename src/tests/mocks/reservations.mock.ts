@@ -32,3 +32,8 @@ export const invalidReservation = {
   type: 'dinner',
   stripeToken: 'toks_visa'
 }
+export const reservationState = {
+  reservation,
+  fetching: false,
+  fetched: true
+}

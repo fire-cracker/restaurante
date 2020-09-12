@@ -12,14 +12,14 @@ import {
   getProfileRequestPending,
   getProfileRequestSuccess,
   getUserProfile
-} from '../../redux/actions/users'
-import { user, loginUser, signupUser, invalidUser, userToken } from '../mocks/users.mock'
+} from '../../../redux/actions/users'
+import { user, loginUser, signupUser, invalidUser, userToken } from '../../mocks/users.mock'
 
-import axios from '../../utils/axiosConfig'
+import axios from '../../../utils/axiosConfig'
 
 const createMockStore = configureMockStore([thunk])
 
-jest.mock('../../utils/axiosConfig')
+jest.mock('../../../utils/axiosConfig')
 
 describe('Users actions', () => {
   const store = createMockStore({})

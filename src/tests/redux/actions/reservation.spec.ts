@@ -5,14 +5,14 @@ import {
   addReservationRequestPending,
   addReservationRequestSuccess,
   addReservation
-} from '../../redux/actions/reservations'
-import { stripeCharge, newReservation, invalidReservation } from '../mocks/reservations.mock'
+} from '../../../redux/actions/reservations'
+import { stripeCharge, newReservation, invalidReservation } from '../../mocks/reservations.mock'
 
-import axios from '../../utils/axiosConfig'
+import axios from '../../../utils/axiosConfig'
 
 const createMockStore = configureMockStore([thunk])
 
-jest.mock('../../utils/axiosConfig')
+jest.mock('../../../utils/axiosConfig')
 
 describe('Users Profile actions', () => {
   const store = createMockStore({})

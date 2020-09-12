@@ -37,3 +37,10 @@ export const menu = {
   recipe: 'dougnut, cinnamon, nutmeg',
   type: 'breakfast'
 }
+
+export const menuState = {
+  menus,
+  count: 3,
+  fetching: false,
+  fetched: true
+}

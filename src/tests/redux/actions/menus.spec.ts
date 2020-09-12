@@ -5,14 +5,14 @@ import {
   getMenusRequestPending,
   getMenusRequestSuccess,
   getMenus
-} from '../../redux/actions/menus'
-import { menu, menus } from '../mocks/menus.mocks'
+} from '../../../redux/actions/menus'
+import { menus } from '../../mocks/menus.mock'
 
-import axios from '../../utils/axiosConfig'
+import axios from '../../../utils/axiosConfig'
 
 const createMockStore = configureMockStore([thunk])
 
-jest.mock('../../utils/axiosConfig')
+jest.mock('../../../utils/axiosConfig')
 
 describe('Users Profile actions', () => {
   const store = createMockStore({})
