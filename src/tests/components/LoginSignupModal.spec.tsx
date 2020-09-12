@@ -1,6 +1,6 @@
 import React from 'react'
 import { BrowserRouter } from 'react-router-dom'
-import { render, cleanup } from '@testing-library/react'
+import { render, cleanup, waitFor } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { Provider } from 'react-redux'
 import configureMockStore from 'redux-mock-store'
@@ -8,6 +8,7 @@ import thunk from 'redux-thunk'
 
 import LoginSignupModal from '../../components/LoginSignupModal'
 import { IUser, IUserState } from '../../types/usersTypes'
+import { user } from '../mocks/users.mock'
 
 const createMockStore = configureMockStore([thunk])
 
@@ -79,8 +80,10 @@ describe('Login/Signup Modal', () => {
     const emailInput = getByPlaceholderText('email')
     expect(emailInput).toBeInTheDocument()
     await userEvent.type(emailInput, 'janedoe@example.com')
-    // expect(defaultProps.onhandleChange).toHaveBeenCalledTimes(16)
     expect(emailInput).toHaveValue('janedoe@example.com')
+    waitFor(() => {
+      expect(defaultProps.onhandleChange).toHaveBeenCalledTimes(16)
+    })
   })
 
   test('should trigger onchange when password is changed', async () => {
@@ -89,11 +92,12 @@ describe('Login/Signup Modal', () => {
     const passwordInput = getByPlaceholderText('password')
     expect(passwordInput).toBeInTheDocument()
     await userEvent.type(passwordInput, 'password')
-    // expect(defaultProps.onhandleChange).toHaveBeenCalledTimes(8)
     expect(passwordInput).toHaveValue('password')
+    waitFor(() => {
+      expect(defaultProps.onhandleChange).toHaveBeenCalledTimes(8)
+    })
   })
 
-  // eslint-disable-next-line jest/expect-expect
   it('should login user if user provides correct login credentials', async () => {
     const wrapper = setup()
     const { getByPlaceholderText, getAllByText } = wrapper
@@ -103,7 +107,9 @@ describe('Login/Signup Modal', () => {
     await userEvent.type(passwordInput, 'password')
     const loginButtons = getAllByText('Login')
     await userEvent.click(loginButtons[1])
-    // expect(defaultProps.login).toHaveBeenCalled()
+    waitFor(() => {
+      expect(defaultProps.login).toHaveBeenCalled()
+    })
   })
 
   it('should not login user if user provides incorrect login credentials', async () => {
@@ -122,11 +128,15 @@ describe('Login/Signup Modal', () => {
     const { getByText } = setup()
     const signupLink = getByText('Sign Up')
     await userEvent.click(signupLink)
-    // expect(defaultProps.toggleLoginSignup).toHaveBeenCalledTimes(1)
+    waitFor(() => {
+      expect(defaultProps.toggleLoginSignup).toHaveBeenCalledTimes(1)
+    })
   })
 
   test('user can signup if user provides correct signup credentials', async () => {
-    const { getByText, getByPlaceholderText, getAllByText } = setup({ loginState: true })
+    const { getByText, getByPlaceholderText, getAllByText } = setup({
+      loginState: true
+    })
     const signupLink = getByText('Sign Up')
     await userEvent.click(signupLink)
     const usernameInput = getByPlaceholderText('username')
@@ -134,6 +144,8 @@ describe('Login/Signup Modal', () => {
     expect(usernameInput).toHaveValue('janedoe')
     const signupButtons = getAllByText('Signup')
     await userEvent.click(signupButtons[1])
-    // expect(defaultProps.signup).toHaveBeenCalled()
+    waitFor(() => {
+      expect(defaultProps.signup).toHaveBeenCalled()
+    })
   })
 })

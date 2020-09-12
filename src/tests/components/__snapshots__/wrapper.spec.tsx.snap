@@ -1,49 +1,73 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`PaymentForm renders PaymentForm component 1`] = `
+exports[`Banner renders Wrapper component 1`] = `
 Object {
   "asFragment": [Function],
   "baseElement": <body>
     <div>
-      <form
-        class="payment-form"
+      <div
+        class="p-0 jumbotron jumbotron-fluid"
       >
         <div
-          id="card-element"
-        />
-        <button
-          disabled=""
-          id="submit"
+          class="container-fluid"
         >
-          <span
-            id="button-text"
+          <div
+            class="top-banner row"
+          />
+          <div
+            class="main-wrapper px-0 row"
           >
-            Pay
-          </span>
-        </button>
-        
-      </form>
+            <div
+              class="container-body d-flex flex-column justify-content-center align-items-center container"
+            >
+              <div
+                class="mt-n5 card"
+              >
+                <div
+                  class="card-body"
+                >
+                  <div>
+                    Hello
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </body>,
   "container": <div>
-    <form
-      class="payment-form"
+    <div
+      class="p-0 jumbotron jumbotron-fluid"
     >
       <div
-        id="card-element"
-      />
-      <button
-        disabled=""
-        id="submit"
+        class="container-fluid"
       >
-        <span
-          id="button-text"
+        <div
+          class="top-banner row"
+        />
+        <div
+          class="main-wrapper px-0 row"
         >
-          Pay
-        </span>
-      </button>
-      
-    </form>
+          <div
+            class="container-body d-flex flex-column justify-content-center align-items-center container"
+          >
+            <div
+              class="mt-n5 card"
+            >
+              <div
+                class="card-body"
+              >
+                <div>
+                  Hello
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>,
   "debug": [Function],
   "findAllByAltText": [Function],

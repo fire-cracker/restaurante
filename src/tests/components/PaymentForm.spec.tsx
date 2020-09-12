@@ -1,12 +1,12 @@
 import React from 'react'
-import { render } from '@testing-library/react'
+import { render, waitFor } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { Elements } from '@stripe/react-stripe-js'
 import { loadStripe } from '@stripe/stripe-js'
 
 import PaymentForm from '../../components/PaymentForm'
-import { reservation } from '../mocks/reservations.mock'
-import { INewReservation } from '../../types/reservationsTypes'
+import { reservation, stripeCharge } from '../mocks/reservations.mock'
+import { INewReservation, IStripeCharge } from '../../types/reservationsTypes'
 import * as mocks from '../mocks/stripe.mock'
 
 const stripePromise = loadStripe('pk_test_s7dzKE4O2saVThp2USNgEFoW00hc0xxPft')
@@ -14,14 +14,16 @@ const stripePromise = loadStripe('pk_test_s7dzKE4O2saVThp2USNgEFoW00hc0xxPft')
 interface IProps {
   reservation: INewReservation
   history: any
-  addReservation: (reservation: any, stripeToken: any) => any
+  addReservation: (reservation: any, stripeToken: any) => Promise<IStripeCharge>
+  handleSubmit: () => void
 }
 
 describe('PaymentForm', () => {
   const props: IProps = {
     reservation: reservation,
     history: {},
-    addReservation: jest.fn()
+    addReservation: jest.fn().mockResolvedValue({ stripeCharge }),
+    handleSubmit: jest.fn()
   }
 
   let mockStripe: any
@@ -90,7 +92,9 @@ describe('PaymentForm', () => {
     )
     const changeEventMock = Symbol('change')
     userEvent.type(mockElement, simulateChange(changeEventMock))
-    // expect(mockHandler).toHaveBeenCalledWith(changeEventMock)
+    waitFor(() => {
+      expect(mockHandler).toHaveBeenCalledWith(changeEventMock)
+    })
   })
 
   test('should submit charge on click', async () => {
@@ -103,6 +107,8 @@ describe('PaymentForm', () => {
     )
     const payButton = getByText('Pay')
     userEvent.click(payButton)
-    // expect(mockHandler).toHaveBeenCalled()
+    waitFor(() => {
+      expect(mockHandler).toHaveBeenCalled()
+    })
   })
 })

@@ -7,12 +7,13 @@ Object {
     <div>
       <nav
         class="sticky-top navbar navbar-expand-lg navbar-dark bg-black"
+        id="nav"
       >
         <a
           class="navbar-brand"
           href="/"
         >
-          React-Bootstrap
+          Restauranté
         </a>
         <button
           aria-controls="basic-navbar-nav"
@@ -71,12 +72,13 @@ Object {
   "container": <div>
     <nav
       class="sticky-top navbar navbar-expand-lg navbar-dark bg-black"
+      id="nav"
     >
       <a
         class="navbar-brand"
         href="/"
       >
-        React-Bootstrap
+        Restauranté
       </a>
       <button
         aria-controls="basic-navbar-nav"

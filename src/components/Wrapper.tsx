@@ -1,4 +1,4 @@
-import React, { FC, ReactNode } from 'react'
+import React, { FC, ReactNode, ReactElement } from 'react'
 import Jumbotron from 'react-bootstrap/Jumbotron'
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
@@ -8,7 +8,7 @@ interface IProps {
   children: ReactNode
 }
 
-const Wrapper: FC<IProps> = ({ children }) => (
+const Wrapper: FC<IProps> = ({ children }): ReactElement => (
   <Jumbotron fluid className="p-0">
     <Container fluid>
       <Row className="top-banner"></Row>
