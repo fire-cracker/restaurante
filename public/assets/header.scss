@@ -40,6 +40,11 @@
   }
 }
 
+.stuck {
+  background-color: #222 !important;
+  padding-top: 3px !important;
+  padding-bottom: 3px !important;
+}
 @media only screen and (min-width: 769px) {
     .navbar {
         .nav-link {
@@ -58,5 +63,6 @@
 @media screen and (max-width: 1000px) {
   .navbar {
     position: relative !important;
+    height: auto;
 }
 }

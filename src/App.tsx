@@ -25,9 +25,8 @@ const App: FC<Props> = ({ setLoggedInState, getUserProfile, userState }) => {
   const menuRef: RefObject<any> = useRef(null)
 
   useEffect(() => {
-    if (!userState.isLoggedIn && localStorage.token) {
+    if (userState.isLoggedIn && !userState.user) {
       const { token } = localStorage
-
       let id = ''
       try {
         ;({ id } = JSON.parse(window.atob(token.split('.')[1])))
