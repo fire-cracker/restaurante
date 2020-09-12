@@ -1,6 +1,6 @@
 import React from 'react'
 import { BrowserRouter } from 'react-router-dom'
-import { render, cleanup } from '@testing-library/react'
+import { render, cleanup, waitFor } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { Provider } from 'react-redux'
 import configureMockStore from 'redux-mock-store'
@@ -84,13 +84,17 @@ describe('Header', () => {
   })
 
   test('user can see logout button and logout if logged in', async () => {
-    const { getByText } = setup(
+    const { getByText, findByText } = setup(
       { userState: { ...defaultProps.userState, isLoggedIn: true } },
       { isLoggedIn: true }
     )
     const logoutButton = await getByText('LOGOUT')
     expect(logoutButton).toBeInTheDocument()
     await userEvent.click(logoutButton)
-    // expect(defaultProps.logout).toHaveBeenCalledTimes(1)
+    waitFor(() => {
+      expect(defaultProps.logout).toHaveBeenCalledTimes(1)
+      const linkElement = findByText('LOGIN')
+      expect(linkElement).toBeInTheDocument()
+    })
   })
 })

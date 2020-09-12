@@ -74,10 +74,10 @@ const ReservationPage: FC<IProps> = ({
           <Col className="form-col justify-content-center align-items-center" lg={8}>
             <Row className="reservation-header mb-4 flex-column justify-content-center align-items-center">
               <Col>
-                <h4 className="text-darkkhaki">FOOD AT FIRST SIGHT</h4>
+                <h4 className="text-darkkhaki">BOOK YOUR TABLE</h4>
               </Col>
               <Col>
-                <h2>Our Restaurant Menu</h2>
+                <h2>Make A Reservation</h2>
               </Col>
               <Col className="divider mt-1 mb-3 text-darkkhaki d-flex flex-row justify-content-center align-items-center">
                 <p className="line my-2 mx-1">&nbsp;</p>
@@ -92,7 +92,11 @@ const ReservationPage: FC<IProps> = ({
                 <Form.Row>
                   <Form.Group as={Col}>
                     <Form.Label></Form.Label>
-                    <Form.Control as="select" name="persons" onChange={onhandleChange}>
+                    <Form.Control
+                      as="select"
+                      data-testid="persons"
+                      name="persons"
+                      onChange={onhandleChange}>
                       <option>1 person</option>
                       <option>2 persons</option>
                       <option>3 persons</option>
@@ -105,6 +109,7 @@ const ReservationPage: FC<IProps> = ({
                     <Form.Label></Form.Label>
                     <Form.Control
                       required
+                      data-testid="date"
                       name="date"
                       type="date"
                       placeholder="Date"
@@ -116,6 +121,7 @@ const ReservationPage: FC<IProps> = ({
                     <Form.Label></Form.Label>
                     <Form.Control
                       required
+                      data-testid="time"
                       name="time"
                       type="time"
                       placeholder="Time"
@@ -127,7 +133,11 @@ const ReservationPage: FC<IProps> = ({
                 <Form.Row>
                   <Form.Group as={Col}>
                     <Form.Label></Form.Label>
-                    <Form.Control as="select" name="type" onChange={onhandleChange}>
+                    <Form.Control
+                      as="select"
+                      data-testid="type"
+                      name="type"
+                      onChange={onhandleChange}>
                       <option>Breakfast</option>
                       <option>Lunch</option>
                       <option>Dinner</option>

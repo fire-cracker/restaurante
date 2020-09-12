@@ -5,7 +5,7 @@ import Banner from '../../components/Banner'
 
 describe('Banner', () => {
   let wrapper: any
-  beforeAll(() => {
+  beforeEach(() => {
     wrapper = render(<Banner />)
   })
 
@@ -15,5 +15,13 @@ describe('Banner', () => {
 
   test('renders Banner component', () => {
     expect(wrapper).toMatchSnapshot()
+  })
+
+  test('renders component text', () => {
+    const { getByText } = wrapper
+    const linkElement = getByText('Restaurante Exquisite Cuisine')
+    const openingTimeElement = getByText('OPENING HOURS')
+    expect(linkElement).toBeInTheDocument()
+    expect(openingTimeElement).toBeInTheDocument()
   })
 })

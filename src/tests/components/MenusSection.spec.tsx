@@ -14,7 +14,9 @@ jest.mock('../../redux/actions/menus')
 
 const createMockStore = configureMockStore([thunk])
 
-const store = createMockStore({})
+const store = createMockStore({
+  menus
+})
 
 interface IProps {
   menuRef?: RefObject<HTMLInputElement>
@@ -24,7 +26,7 @@ interface IProps {
 describe('Header', () => {
   const defaultProps: IProps = {
     menuRef: React.createRef(),
-    getMenus: jest.fn().mockResolvedValue({menus}),
+    getMenus: jest.fn().mockResolvedValue({ menus }),
     menus: menus
   }
 
@@ -32,7 +34,7 @@ describe('Header', () => {
     const props = { ...defaultProps, ...newProps }
     return render(
       <Provider store={store}>
-        <MenusSection {...props} menus={menus}/>
+        <MenusSection {...props} menus={menus} />
       </Provider>
     )
   }

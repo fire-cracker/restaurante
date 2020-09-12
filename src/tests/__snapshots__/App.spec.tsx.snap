@@ -6,16 +6,17 @@ Object {
   "baseElement": <body>
     <div>
       <div
-        class="p-0 container-fluid"
+        class="p-0 bg-lavender container-fluid"
       >
         <nav
           class="sticky-top navbar navbar-expand-lg navbar-dark bg-black"
+          id="nav"
         >
           <a
             class="navbar-brand"
             href="/"
           >
-            React-Bootstrap
+            Restauranté
           </a>
           <button
             aria-controls="basic-navbar-nav"
@@ -372,21 +373,68 @@ Object {
             </div>
           </div>
         </div>
+        <div
+          class="p-0 mb-0 footer-wrapper d-flex justify-content-center align-items-center jumbotron jumbotron-fluid"
+        >
+          <div
+            class="container-fluid"
+          >
+            <div
+              class="footer-banner row"
+            >
+              <div
+                class="text-white px-3 mx-auto row"
+              >
+                <div
+                  class="p-0 d-flex flex-column justify-content-center align-items-center col"
+                >
+                  <div
+                    class="footer-text-0 text-darkkhaki"
+                  >
+                    <h3>
+                      Restauranté
+                    </h3>
+                  </div>
+                  <div
+                    class="footer-text-1 text-center text-dimgray"
+                  >
+                    <p
+                      class="font-weight-normal mb-0"
+                    >
+                      Maryland, South Estate HQ 24 Fifth st., Los Angeles, Nigeria
+                    </p>
+                    <p
+                      class="font-weight-normal mb-0"
+                    >
+                      Phone: (+01) 123 456 7890
+                    </p>
+                    <p
+                      class="font-weight-normal mb-0"
+                    >
+                      info@example.com
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </body>,
   "container": <div>
     <div
-      class="p-0 container-fluid"
+      class="p-0 bg-lavender container-fluid"
     >
       <nav
         class="sticky-top navbar navbar-expand-lg navbar-dark bg-black"
+        id="nav"
       >
         <a
           class="navbar-brand"
           href="/"
         >
-          React-Bootstrap
+          Restauranté
         </a>
         <button
           aria-controls="basic-navbar-nav"
@@ -737,6 +785,52 @@ Object {
                       />
                     </div>
                   </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="p-0 mb-0 footer-wrapper d-flex justify-content-center align-items-center jumbotron jumbotron-fluid"
+      >
+        <div
+          class="container-fluid"
+        >
+          <div
+            class="footer-banner row"
+          >
+            <div
+              class="text-white px-3 mx-auto row"
+            >
+              <div
+                class="p-0 d-flex flex-column justify-content-center align-items-center col"
+              >
+                <div
+                  class="footer-text-0 text-darkkhaki"
+                >
+                  <h3>
+                    Restauranté
+                  </h3>
+                </div>
+                <div
+                  class="footer-text-1 text-center text-dimgray"
+                >
+                  <p
+                    class="font-weight-normal mb-0"
+                  >
+                    Maryland, South Estate HQ 24 Fifth st., Los Angeles, Nigeria
+                  </p>
+                  <p
+                    class="font-weight-normal mb-0"
+                  >
+                    Phone: (+01) 123 456 7890
+                  </p>
+                  <p
+                    class="font-weight-normal mb-0"
+                  >
+                    info@example.com
+                  </p>
                 </div>
               </div>
             </div>
