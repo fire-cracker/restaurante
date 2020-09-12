@@ -49,11 +49,6 @@ const Header: FC<Props> = ({
             LOGIN
           </Button>
         )}
-        {userState.isLoggedIn && (
-          <Button href="/profile" variant="outline-transparent">
-            <i className="fa fa-shopping-cart text-white"></i>
-          </Button>
-        )}
       </Nav>
     </Navbar.Collapse>
   </Navbar>
