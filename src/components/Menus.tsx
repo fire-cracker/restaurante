@@ -26,6 +26,7 @@ const MenusSection: FC<Props> = ({ menuRef, getMenus }): ReactElement => {
     fetchData()
   }, [getMenus])
 
+  // console.log('menu><<<<', menus)
   return (
     <Jumbotron ref={menuRef} fluid className="menu-jumbotron bg-ghostwhite px-0">
       <Container className="menu-container m-auto">

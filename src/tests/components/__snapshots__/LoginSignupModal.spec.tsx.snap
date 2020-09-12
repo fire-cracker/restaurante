@@ -1,0 +1,235 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Login/Signup Modal renders Login Modal 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body
+    class="modal-open"
+    style="padding-right: 0px;"
+  >
+    <div
+      aria-hidden="true"
+    />
+    <div
+      class="fade modal-backdrop show"
+    />
+    <div
+      aria-labelledby="contained-modal-title-vcenter"
+      aria-modal="true"
+      class="fade modal-wrapper modal show"
+      role="dialog"
+      style="display: block;"
+      tabindex="-1"
+    >
+      <div
+        class="modal-dialog modal-lg modal-dialog-centered"
+        role="document"
+      >
+        <div
+          class="modal-content"
+        >
+          <div
+            class="wrapper-row row"
+          >
+            <div
+              class="wrapper-row-col p-3 justify-content-center align-items-center col"
+            >
+              <div
+                class="border-0 p-0 pr-2 pt-2 modal-header"
+              >
+                <button
+                  class="close"
+                  type="button"
+                >
+                  <span
+                    aria-hidden="true"
+                  >
+                    ×
+                  </span>
+                  <span
+                    class="sr-only"
+                  >
+                    Close
+                  </span>
+                </button>
+              </div>
+              <div
+                class="modal-body"
+              >
+                <div
+                  class="modal-body-row justify-content-center align-items-center text-center row"
+                >
+                  <div
+                    class="flex-column justify-content-center align-items-center col-md-12"
+                  >
+                    <div
+                      class="col"
+                    >
+                      <h2>
+                        Login
+                      </h2>
+                    </div>
+                    <div
+                      class="divider mt-1 mb-3 text-darkkhaki d-flex flex-row justify-content-center align-items-center col"
+                    >
+                      <p
+                        class="line my-2 mx-1"
+                      >
+                         
+                      </p>
+                      <p
+                        class="icon"
+                      >
+                        <img
+                          alt="entwined"
+                          class="fa fa-cutlery"
+                          src="/images/entwined.svg"
+                        />
+                      </p>
+                      <p
+                        class="line my-2 mx-1"
+                      >
+                         
+                      </p>
+                    </div>
+                  </div>
+                  <div
+                    class="justify-content-center align-items-center col-md-12"
+                  >
+                    <form
+                      class=""
+                      novalidate=""
+                    >
+                      <div
+                        class="flex-column justify-content-center align-items-center form-row"
+                      >
+                        <div
+                          class="form-group col"
+                        >
+                          <label
+                            class="form-label"
+                            for="validationCustom01"
+                          />
+                          <input
+                            class="form-control"
+                            id="validationCustom01"
+                            name="email"
+                            placeholder="email"
+                            required=""
+                            type="text"
+                          />
+                          <div
+                            class="valid-feedback"
+                          >
+                            Looks good!
+                          </div>
+                        </div>
+                        <div
+                          class="form-group col"
+                        >
+                          <label
+                            class="form-label"
+                            for="validationCustom02"
+                          />
+                          <input
+                            class="form-control"
+                            id="validationCustom02"
+                            name="password"
+                            placeholder="password"
+                            required=""
+                            type="password"
+                          />
+                          <div
+                            class="valid-feedback"
+                          >
+                            Looks good!
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="justify-content-center align-items-center form-row"
+                      >
+                        <button
+                          class="bg-black border-0 rounded-0 btn btn-primary"
+                          type="submit"
+                        >
+                          Login
+                        </button>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="justify-content-center align-items-center modal-footer"
+              >
+                Don't have an account?
+                <button
+                  class="btn btn-link"
+                  type="button"
+                >
+                  Sign Up
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>,
+  "container": <div
+    aria-hidden="true"
+  />,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;

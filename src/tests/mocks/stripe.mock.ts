@@ -1,0 +1,42 @@
+export const mockElement = () => ({
+  mount: jest.fn(),
+  destroy: jest.fn(),
+  on: jest.fn(),
+  update: jest.fn()
+})
+
+export const mockElements = () => {
+  const elements: any = {}
+  return {
+    create: jest.fn(type => {
+      elements[type] = mockElement()
+      return elements[type]
+    }),
+    getElement: jest.fn(type => elements[type] || null)
+  }
+}
+
+export const mockStripe = () => ({
+  elements: jest.fn(() => mockElements()),
+  createToken: jest.fn(),
+  createSource: jest.fn(),
+  createPaymentMethod: jest.fn(),
+  confirmCardPayment: jest.fn(),
+  confirmCardSetup: jest.fn(),
+  paymentRequest: jest.fn(),
+  _registerWrapper: jest.fn()
+})
+
+mockStripe().createToken.mockResolvedValue({
+  token: {
+    id: 'test_id'
+  }
+})
+
+mockStripe().createToken.mockResolvedValue({
+  error: {
+    code: 'incomplete_number',
+    message: 'Your card number is incomplete.',
+    type: 'validation_error'
+  }
+})

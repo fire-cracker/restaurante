@@ -52,12 +52,12 @@ const PaymentForm: FC<IProps> = ({ history, reservation, addReservation }) => {
     const {
       token: { id: stripeToken }
     } = (await stripe.createToken(cardElement!)) as { token: Token }
-    const reservation = {
-      date: '8/31/2020',
-      persons: 2,
-      time: '15:00',
-      type: 'dinner'
-    }
+    // const reservation = {
+    //   date: '8/31/2020',
+    //   persons: 2,
+    //   time: '15:00',
+    //   type: 'dinner'
+    // }
 
     if (stripeToken) {
       const stripeCharge = await addReservation(reservation, stripeToken)

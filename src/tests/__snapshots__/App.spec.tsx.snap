@@ -1,0 +1,800 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App renders App component 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div
+        class="p-0 container-fluid"
+      >
+        <nav
+          class="sticky-top navbar navbar-expand-lg navbar-dark bg-black"
+        >
+          <a
+            class="navbar-brand"
+            href="/"
+          >
+            React-Bootstrap
+          </a>
+          <button
+            aria-controls="basic-navbar-nav"
+            aria-label="Toggle navigation"
+            class="navbar-toggler collapsed"
+            type="button"
+          >
+            <span
+              class="navbar-toggler-icon"
+            />
+          </button>
+          <div
+            class="navbar-collapse collapse"
+            id="basic-navbar-nav"
+          >
+            <div
+              class="m-auto main-tabs navbar-nav"
+            >
+              <a
+                class="nav-link active"
+                data-rb-event-key="home"
+                href="/"
+              >
+                HOME
+              </a>
+              <a
+                class="nav-link"
+                data-rb-event-key="menu"
+                href="/menu"
+              >
+                MENU
+              </a>
+              <a
+                class="nav-link"
+                data-rb-event-key="reservation"
+                href="/reservation"
+              >
+                BOOK A TABLE
+              </a>
+            </div>
+            <div
+              class="mr navbar-nav"
+            >
+              <a
+                class="btn btn-outline-darkkhaki"
+                href="#"
+                role="button"
+              >
+                LOGIN
+              </a>
+            </div>
+          </div>
+        </nav>
+        <div
+          class="home-wrapper p-0 container-fluid"
+        >
+          <div
+            class="p-0 jumbotron jumbotron-fluid"
+          >
+            <div
+              class="container-fluid"
+            >
+              <div
+                class="row"
+              >
+                <div
+                  class="embed-responsive embed-responsive-1by1"
+                >
+                  <div
+                    class="banner d-flex flex-column justify-content-center align-items-center embed-responsive-item col"
+                  >
+                    <div
+                      class="text-0 text-darkkhaki"
+                    >
+                      <p>
+                        Restaurante Exquisite Cuisine
+                      </p>
+                    </div>
+                    <div
+                      class="text-1 text-white"
+                    >
+                      <p
+                        class="font-weight-normal"
+                      >
+                        Enjoy our Food Experience
+                      </p>
+                    </div>
+                    <div
+                      class="divider text-darkkhaki d-flex flex-row"
+                    >
+                      <p
+                        class="line my-2 mx-2"
+                      >
+                         
+                      </p>
+                      <p
+                        class="icon"
+                      >
+                        <i
+                          class="fa fa-cutlery"
+                        />
+                      </p>
+                      <p
+                        class="line my-2 mx-2"
+                      >
+                         
+                      </p>
+                    </div>
+                    <div
+                      class="text-2 text-white"
+                    >
+                      <p>
+                        OPENING HOURS
+                      </p>
+                    </div>
+                    <div
+                      class="text-3 text-white d-flex flex-row"
+                    >
+                      <p
+                        class="days"
+                      >
+                        Monday - Friday: 
+                      </p>
+                      <p
+                        class="time text-dimgray"
+                      >
+                         07:30AM - 23:00PM
+                      </p>
+                    </div>
+                    <div
+                      class="text-4 text-white d-flex flex-row"
+                    >
+                      <p
+                        class="days"
+                      >
+                        Weekends: 
+                      </p>
+                      <p
+                        class="time text-dimgray"
+                      >
+                         07:30AM - 03:00PM
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="menu-jumbotron bg-ghostwhite px-0 jumbotron jumbotron-fluid"
+          >
+            <div
+              class="menu-container m-auto container"
+            >
+              <div
+                class="container-wrapper px-0 row"
+              >
+                <div
+                  class="container-body m-0 d-flex flex-column justify-content-center align-items-center container"
+                >
+                  <div
+                    class="menu-header mb-4 flex-column justify-content-center align-items-center row"
+                  >
+                    <div
+                      class="col"
+                    >
+                      <h4
+                        class="text-darkkhaki"
+                      >
+                        FOOD AT FIRST SIGHT
+                      </h4>
+                    </div>
+                    <div
+                      class="col"
+                    >
+                      <h2>
+                        Our Restaurant Menu
+                      </h2>
+                    </div>
+                    <div
+                      class="divider mt-1 mb-3 text-darkkhaki d-flex flex-row justify-content-center align-items-center col"
+                    >
+                      <p
+                        class="line my-2 mx-1"
+                      >
+                         
+                      </p>
+                      <p
+                        class="icon"
+                      >
+                        <img
+                          alt="entwined"
+                          class="fa fa-cutlery"
+                          src="/images/entwined.svg"
+                        />
+                      </p>
+                      <p
+                        class="line my-2 mx-1"
+                      >
+                         
+                      </p>
+                    </div>
+                  </div>
+                  <div
+                    class="navs-container mb-4 w-100 row"
+                  >
+                    <div
+                      class="w-100 justify-content-between nav"
+                      role="tablist"
+                    >
+                      <div
+                        class="nav-col p-0 col-lg-3 col-md-5"
+                      >
+                        <div
+                          class="mr-4 mt-1 mb-0 p-0 nav-item"
+                        >
+                          <a
+                            aria-selected="true"
+                            class="py-4 px-3 bg-white nav-link active"
+                            data-rb-event-key="breakfast"
+                            href="#"
+                            role="tab"
+                          >
+                            <img
+                              alt="breafast icon"
+                              src="/images/breakfast.svg"
+                            />
+                            <p>
+                              Breakfast
+                            </p>
+                          </a>
+                        </div>
+                      </div>
+                      <div
+                        class="nav-col p-0 col-lg-3 col-md-5"
+                      >
+                        <div
+                          class="mr-4 mt-1 mb-0 p-0 nav-item"
+                        >
+                          <a
+                            aria-selected="false"
+                            class="py-4 px-3 bg-white nav-link"
+                            data-rb-event-key="lunch"
+                            href="#"
+                            role="tab"
+                            tabindex="-1"
+                          >
+                            <img
+                              alt="breafast icon"
+                              src="/images/lunch.svg"
+                            />
+                            <p>
+                              Lunch
+                            </p>
+                          </a>
+                        </div>
+                      </div>
+                      <div
+                        class="nav-col p-0 col-lg-3 col-md-5"
+                      >
+                        <div
+                          class="mr-4 mt-1 mb-0 p-0 nav-item"
+                        >
+                          <a
+                            aria-selected="false"
+                            class="py-4 px-3 bg-white nav-link"
+                            data-rb-event-key="dinner"
+                            href="#"
+                            role="tab"
+                            tabindex="-1"
+                          >
+                            <img
+                              alt="breafast icon"
+                              src="/images/dinner.svg"
+                            />
+                            <p>
+                              Dinner
+                            </p>
+                          </a>
+                        </div>
+                      </div>
+                      <div
+                        class="nav-col mr-0 p-0 col-lg-3 col-md-5"
+                      >
+                        <div
+                          class="mr-0 mt-1 mb-0 p-0 nav-item"
+                        >
+                          <a
+                            aria-selected="false"
+                            class="py-4 px-3 bg-white nav-link"
+                            data-rb-event-key="drink"
+                            href="#"
+                            role="tab"
+                            tabindex="-1"
+                          >
+                            <img
+                              alt="breafast icon"
+                              src="/images/drink.svg"
+                            />
+                            <p>
+                              Drinks
+                            </p>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="menu-body mx-0 pt-5 row"
+                  >
+                    <div
+                      class="tab-content"
+                    >
+                      <div
+                        aria-hidden="false"
+                        class="fade tab-pane active show"
+                        role="tabpanel"
+                      >
+                        <div
+                          class="row"
+                        />
+                      </div>
+                      <div
+                        aria-hidden="true"
+                        class="fade tab-pane"
+                        role="tabpanel"
+                      >
+                        <div
+                          class="row"
+                        />
+                      </div>
+                      <div
+                        aria-hidden="true"
+                        class="fade tab-pane"
+                        role="tabpanel"
+                      >
+                        <div
+                          class="row"
+                        />
+                      </div>
+                      <div
+                        aria-hidden="true"
+                        class="fade tab-pane"
+                        role="tabpanel"
+                      >
+                        <div
+                          class="row"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="p-0 container-fluid"
+    >
+      <nav
+        class="sticky-top navbar navbar-expand-lg navbar-dark bg-black"
+      >
+        <a
+          class="navbar-brand"
+          href="/"
+        >
+          React-Bootstrap
+        </a>
+        <button
+          aria-controls="basic-navbar-nav"
+          aria-label="Toggle navigation"
+          class="navbar-toggler collapsed"
+          type="button"
+        >
+          <span
+            class="navbar-toggler-icon"
+          />
+        </button>
+        <div
+          class="navbar-collapse collapse"
+          id="basic-navbar-nav"
+        >
+          <div
+            class="m-auto main-tabs navbar-nav"
+          >
+            <a
+              class="nav-link active"
+              data-rb-event-key="home"
+              href="/"
+            >
+              HOME
+            </a>
+            <a
+              class="nav-link"
+              data-rb-event-key="menu"
+              href="/menu"
+            >
+              MENU
+            </a>
+            <a
+              class="nav-link"
+              data-rb-event-key="reservation"
+              href="/reservation"
+            >
+              BOOK A TABLE
+            </a>
+          </div>
+          <div
+            class="mr navbar-nav"
+          >
+            <a
+              class="btn btn-outline-darkkhaki"
+              href="#"
+              role="button"
+            >
+              LOGIN
+            </a>
+          </div>
+        </div>
+      </nav>
+      <div
+        class="home-wrapper p-0 container-fluid"
+      >
+        <div
+          class="p-0 jumbotron jumbotron-fluid"
+        >
+          <div
+            class="container-fluid"
+          >
+            <div
+              class="row"
+            >
+              <div
+                class="embed-responsive embed-responsive-1by1"
+              >
+                <div
+                  class="banner d-flex flex-column justify-content-center align-items-center embed-responsive-item col"
+                >
+                  <div
+                    class="text-0 text-darkkhaki"
+                  >
+                    <p>
+                      Restaurante Exquisite Cuisine
+                    </p>
+                  </div>
+                  <div
+                    class="text-1 text-white"
+                  >
+                    <p
+                      class="font-weight-normal"
+                    >
+                      Enjoy our Food Experience
+                    </p>
+                  </div>
+                  <div
+                    class="divider text-darkkhaki d-flex flex-row"
+                  >
+                    <p
+                      class="line my-2 mx-2"
+                    >
+                       
+                    </p>
+                    <p
+                      class="icon"
+                    >
+                      <i
+                        class="fa fa-cutlery"
+                      />
+                    </p>
+                    <p
+                      class="line my-2 mx-2"
+                    >
+                       
+                    </p>
+                  </div>
+                  <div
+                    class="text-2 text-white"
+                  >
+                    <p>
+                      OPENING HOURS
+                    </p>
+                  </div>
+                  <div
+                    class="text-3 text-white d-flex flex-row"
+                  >
+                    <p
+                      class="days"
+                    >
+                      Monday - Friday: 
+                    </p>
+                    <p
+                      class="time text-dimgray"
+                    >
+                       07:30AM - 23:00PM
+                    </p>
+                  </div>
+                  <div
+                    class="text-4 text-white d-flex flex-row"
+                  >
+                    <p
+                      class="days"
+                    >
+                      Weekends: 
+                    </p>
+                    <p
+                      class="time text-dimgray"
+                    >
+                       07:30AM - 03:00PM
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="menu-jumbotron bg-ghostwhite px-0 jumbotron jumbotron-fluid"
+        >
+          <div
+            class="menu-container m-auto container"
+          >
+            <div
+              class="container-wrapper px-0 row"
+            >
+              <div
+                class="container-body m-0 d-flex flex-column justify-content-center align-items-center container"
+              >
+                <div
+                  class="menu-header mb-4 flex-column justify-content-center align-items-center row"
+                >
+                  <div
+                    class="col"
+                  >
+                    <h4
+                      class="text-darkkhaki"
+                    >
+                      FOOD AT FIRST SIGHT
+                    </h4>
+                  </div>
+                  <div
+                    class="col"
+                  >
+                    <h2>
+                      Our Restaurant Menu
+                    </h2>
+                  </div>
+                  <div
+                    class="divider mt-1 mb-3 text-darkkhaki d-flex flex-row justify-content-center align-items-center col"
+                  >
+                    <p
+                      class="line my-2 mx-1"
+                    >
+                       
+                    </p>
+                    <p
+                      class="icon"
+                    >
+                      <img
+                        alt="entwined"
+                        class="fa fa-cutlery"
+                        src="/images/entwined.svg"
+                      />
+                    </p>
+                    <p
+                      class="line my-2 mx-1"
+                    >
+                       
+                    </p>
+                  </div>
+                </div>
+                <div
+                  class="navs-container mb-4 w-100 row"
+                >
+                  <div
+                    class="w-100 justify-content-between nav"
+                    role="tablist"
+                  >
+                    <div
+                      class="nav-col p-0 col-lg-3 col-md-5"
+                    >
+                      <div
+                        class="mr-4 mt-1 mb-0 p-0 nav-item"
+                      >
+                        <a
+                          aria-selected="true"
+                          class="py-4 px-3 bg-white nav-link active"
+                          data-rb-event-key="breakfast"
+                          href="#"
+                          role="tab"
+                        >
+                          <img
+                            alt="breafast icon"
+                            src="/images/breakfast.svg"
+                          />
+                          <p>
+                            Breakfast
+                          </p>
+                        </a>
+                      </div>
+                    </div>
+                    <div
+                      class="nav-col p-0 col-lg-3 col-md-5"
+                    >
+                      <div
+                        class="mr-4 mt-1 mb-0 p-0 nav-item"
+                      >
+                        <a
+                          aria-selected="false"
+                          class="py-4 px-3 bg-white nav-link"
+                          data-rb-event-key="lunch"
+                          href="#"
+                          role="tab"
+                          tabindex="-1"
+                        >
+                          <img
+                            alt="breafast icon"
+                            src="/images/lunch.svg"
+                          />
+                          <p>
+                            Lunch
+                          </p>
+                        </a>
+                      </div>
+                    </div>
+                    <div
+                      class="nav-col p-0 col-lg-3 col-md-5"
+                    >
+                      <div
+                        class="mr-4 mt-1 mb-0 p-0 nav-item"
+                      >
+                        <a
+                          aria-selected="false"
+                          class="py-4 px-3 bg-white nav-link"
+                          data-rb-event-key="dinner"
+                          href="#"
+                          role="tab"
+                          tabindex="-1"
+                        >
+                          <img
+                            alt="breafast icon"
+                            src="/images/dinner.svg"
+                          />
+                          <p>
+                            Dinner
+                          </p>
+                        </a>
+                      </div>
+                    </div>
+                    <div
+                      class="nav-col mr-0 p-0 col-lg-3 col-md-5"
+                    >
+                      <div
+                        class="mr-0 mt-1 mb-0 p-0 nav-item"
+                      >
+                        <a
+                          aria-selected="false"
+                          class="py-4 px-3 bg-white nav-link"
+                          data-rb-event-key="drink"
+                          href="#"
+                          role="tab"
+                          tabindex="-1"
+                        >
+                          <img
+                            alt="breafast icon"
+                            src="/images/drink.svg"
+                          />
+                          <p>
+                            Drinks
+                          </p>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="menu-body mx-0 pt-5 row"
+                >
+                  <div
+                    class="tab-content"
+                  >
+                    <div
+                      aria-hidden="false"
+                      class="fade tab-pane active show"
+                      role="tabpanel"
+                    >
+                      <div
+                        class="row"
+                      />
+                    </div>
+                    <div
+                      aria-hidden="true"
+                      class="fade tab-pane"
+                      role="tabpanel"
+                    >
+                      <div
+                        class="row"
+                      />
+                    </div>
+                    <div
+                      aria-hidden="true"
+                      class="fade tab-pane"
+                      role="tabpanel"
+                    >
+                      <div
+                        class="row"
+                      />
+                    </div>
+                    <div
+                      aria-hidden="true"
+                      class="fade tab-pane"
+                      role="tabpanel"
+                    >
+                      <div
+                        class="row"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
