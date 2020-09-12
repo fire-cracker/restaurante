@@ -24,8 +24,8 @@ const Header: FC<Props> = ({
   userState,
   logout
 }): ReactElement => (
-  <Navbar bg="black" expand="lg" variant="dark" className="sticky-top">
-    <Navbar.Brand href="/">React-Bootstrap</Navbar.Brand>
+  <Navbar collapseOnSelect bg="black" expand="lg" variant="dark" id="nav" className="sticky-top">
+    <Navbar.Brand href="/">Restauranté</Navbar.Brand>
     <Navbar.Toggle aria-controls="basic-navbar-nav" />
     <Navbar.Collapse id="basic-navbar-nav">
       <Nav defaultActiveKey="home" className="m-auto main-tabs">
@@ -47,11 +47,6 @@ const Header: FC<Props> = ({
         ) : (
           <Button href="#" variant="outline-darkkhaki" onClick={() => onModalShow()}>
             LOGIN
-          </Button>
-        )}
-        {userState.isLoggedIn && (
-          <Button href="/profile" variant="outline-transparent">
-            <i className="fa fa-shopping-cart text-white"></i>
           </Button>
         )}
       </Nav>

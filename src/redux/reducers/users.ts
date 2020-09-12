@@ -15,7 +15,7 @@ const {
 const initialState: IUserState = {
   user: null,
   logingIn: false,
-  isLoggedIn: false
+  isLoggedIn: localStorage.token ? true : false
 }
 export default (state = initialState, action: Action<any>): IUserState => {
   switch (action.type) {
