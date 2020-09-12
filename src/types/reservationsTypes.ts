@@ -6,7 +6,6 @@ export interface IReservation {
   type: string
   price: number
   persons: number
-  stripeId: string
 }
 export interface INewReservation {
   date: string
@@ -19,4 +18,15 @@ export interface IReservationState {
   reservation: IReservation | null
   fetching: boolean
   fetched: boolean
+}
+
+export interface IStripeCharge {
+  id: string
+  object: string
+  amount: 2000
+  paid: boolean
+  receipt_email: string
+  receipt_number: string
+  receipt_url: string
+  status: string
 }

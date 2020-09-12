@@ -12,17 +12,18 @@ import ReservationPage from './views/ReservationPage'
 import PaymentPage from './views/Checkout'
 import { IRootState } from './redux/reducers'
 import { IUser, IUserState } from './types/usersTypes'
+import { INewReservation } from './types/reservationsTypes'
 import { setLoggedInState, getUserProfile } from './redux/actions/users'
 
 interface Props {
   userState: IUserState
   setLoggedInState: (user: IUser) => void
-  getUserProfile: (id: string) => any
+  getUserProfile: (id: string) => Promise<IUser>
 }
 
 const App: FC<Props> = ({ setLoggedInState, getUserProfile, userState }) => {
-  const [modalShow, setModalShow] = useState(false)
-  const [reservation, setReservation] = useState(null)
+  const [modalShow, setModalShow] = useState<boolean>(false)
+  const [reservation, setReservation] = useState<INewReservation | null>(null)
   const menuRef: RefObject<any> = useRef(null)
 
   useEffect(() => {
@@ -36,14 +37,13 @@ const App: FC<Props> = ({ setLoggedInState, getUserProfile, userState }) => {
       }
 
       if (id) {
-        const setUserState = async () => {
+        (async () => {
           const user = await getUserProfile(id)
           if (user) await setLoggedInState(user)
           else {
             localStorage.clear()
           }
-        }
-        setUserState()
+        })()
       }
     }
   }, [getUserProfile, setLoggedInState, userState])

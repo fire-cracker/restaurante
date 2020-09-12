@@ -1,7 +1,8 @@
-import React, { FC, useState } from 'react'
+import React, { FC, useState, ReactElement } from 'react'
 import { CardElement, useStripe, useElements } from '@stripe/react-stripe-js'
 import { Token, StripeError } from '@stripe/stripe-js'
 import ClipLoader from 'react-spinners/ClipLoader'
+import { INewReservation, IStripeCharge } from '../types/reservationsTypes'
 
 const cardStyle = {
   style: {
@@ -22,11 +23,11 @@ const cardStyle = {
 }
 
 interface IProps {
-  reservation: any
-  addReservation: (reservation: any, stripeToken: any) => any
+  reservation: INewReservation | null
+  addReservation: (reservation: INewReservation, stripeToken: string) => Promise<IStripeCharge>
 }
 
-const PaymentForm: FC<IProps> = ({ reservation, addReservation }) => {
+const PaymentForm: FC<IProps> = ({ reservation, addReservation }): ReactElement => {
   const [error, setError] = useState('')
   const [processing, setProcessing] = useState(false)
   const [disabled, setDisabled] = useState(true)
@@ -55,7 +56,7 @@ const PaymentForm: FC<IProps> = ({ reservation, addReservation }) => {
       setError(result.error.message!)
     } else {
       setError('')
-      const stripeCharge = await addReservation(reservation, result.token.id)
+      const stripeCharge: IStripeCharge = await addReservation(reservation!, result.token.id)
       if (stripeCharge) {
         setReceiptUrl(stripeCharge.receipt_url)
       } else {

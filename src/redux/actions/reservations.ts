@@ -3,7 +3,7 @@ import { toast } from 'react-toastify'
 
 import axios from '../../utils/axiosConfig'
 import { ActionType, Action } from '../../types/actionsTypes'
-import { INewReservation } from '../../types/reservationsTypes'
+import { INewReservation, IStripeCharge } from '../../types/reservationsTypes'
 
 const {
   ADD_RESERVATION_REQUEST_PENDING,
@@ -17,7 +17,7 @@ export const addReservationRequestPending = (): Action<any> => ({
   type: ADD_RESERVATION_REQUEST_PENDING
 })
 
-export const addReservationRequestSuccess = (data: Record<string, unknown>): Action<any> => ({
+export const addReservationRequestSuccess = (data: IStripeCharge): Action<IStripeCharge> => ({
   type: ADD_RESERVATION_REQUEST_SUCCESS,
   payload: data
 })
@@ -26,9 +26,9 @@ export const addReservationRequestFailed = (): Action<any> => ({
   type: ADD_RESERVATION_REQUEST_FAILED
 })
 
-export const addReservation = (reservation: any, stripeToken: string) => async (
+export const addReservation = (reservation: INewReservation, stripeToken: string) => async (
   dispatch: Dispatch<Action<any>>
-): Promise<any> => {
+): Promise<IStripeCharge> => {
   try {
     dispatch(addReservationRequestPending())
     const {

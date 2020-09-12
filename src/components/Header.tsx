@@ -12,7 +12,6 @@ import { logout } from '../redux/actions/users'
 
 interface Props extends RouteComponentProps<void> {
   executeScrollToMenu: (history: any) => void
-  history: any
   onModalShow: () => void
   userState: IUserState
   logout: () => void

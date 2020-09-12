@@ -1,4 +1,4 @@
-import React, { FC, RefObject } from 'react'
+import React, { FC, RefObject, ReactElement } from 'react'
 import { useParams } from 'react-router-dom'
 import Container from 'react-bootstrap/Container'
 
@@ -8,7 +8,7 @@ import MenusSection from '../components/Menus'
 interface Props {
   menuRef: RefObject<HTMLInputElement>
 }
-const LandingPage: FC<Props> = ({ menuRef }) => {
+const LandingPage: FC<Props> = ({ menuRef }): ReactElement => {
   const { id } = useParams()
   if (!id) window.scrollTo(0, 0)
 

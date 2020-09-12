@@ -3,7 +3,6 @@ import { toast } from 'react-toastify'
 
 import axios from '../../utils/axiosConfig'
 import { ActionType, Action } from '../../types/actionsTypes'
-import { IUser } from '../../types/usersTypes'
 import { IMenu } from '../../types/menusTypes'
 
 const {
@@ -18,7 +17,10 @@ export const getMenusRequestPending = (): Action<any> => ({
   type: GET_MENUS_REQUEST_PENDING
 })
 
-export const getMenusRequestSuccess = (data: IUser): Action<IUser> => ({
+export const getMenusRequestSuccess = (data: {
+  menus: IMenu[]
+  count: number
+}): Action<{ menus: IMenu[]; count: number }> => ({
   type: GET_MENUS_REQUEST_SUCCESS,
   payload: data
 })

@@ -1,4 +1,4 @@
-import React, { FC, useState, useEffect } from 'react'
+import React, { FC, useState, useEffect, ReactElement, Dispatch, SetStateAction } from 'react'
 import { RouteComponentProps } from 'react-router'
 import { connect } from 'react-redux'
 
@@ -11,15 +11,20 @@ import Button from 'react-bootstrap/Button'
 import Wrapper from '../components/Wrapper'
 import { IRootState } from '../redux/reducers'
 import { IUserState } from '../types/usersTypes'
+import { INewReservation } from '../types/reservationsTypes'
 
 interface IProps extends RouteComponentProps {
-  history: any
-  setReservation: any
+  setReservation: Dispatch<SetStateAction<INewReservation | null>>
   userState: IUserState
   onModalShow: () => void
 }
 
-const ReservationPage: FC<IProps> = ({ history, setReservation, userState, onModalShow }) => {
+const ReservationPage: FC<IProps> = ({
+  history,
+  setReservation,
+  userState,
+  onModalShow
+}): ReactElement => {
   const [validated, setValidated] = useState(false)
   const [reservationState, setReservationState] = useState({
     date: '',
@@ -29,16 +34,20 @@ const ReservationPage: FC<IProps> = ({ history, setReservation, userState, onMod
   })
 
   useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
+
+  useEffect(() => {
     if (!userState.isLoggedIn) {
       onModalShow()
       history.push('/')
     }
-  })
+  }, [userState.isLoggedIn, onModalShow, history])
 
   const onhandleChange = ({
     target: { name, value }
   }: {
-    target: { name: string; value: any }
+    target: { name: string; value: string }
   }) => {
     setReservationState(prevState => ({
       ...prevState,
