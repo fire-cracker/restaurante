@@ -1,0 +1,23 @@
+.footer-wrapper {
+  @include overlay-background(0.5, '/images/footer-bg.jpg');
+  font-family: Montserrat;
+  height: 70vh!important;
+  .embed-responsive {
+    overflow: initial;
+  }
+  .footer-text-1 {
+    p{
+      font-size: .7rem !important;
+    }
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .footer-wrapper {
+    .footer-text-1 {
+      p{
+        font-size: 1.3rem !important;
+      }
+    }
+  }
+}

@@ -6,6 +6,7 @@ import Container from 'react-bootstrap/Container'
 
 import Header from './components/Header'
 import LoginSignupModal from './components/LoginSignupModal'
+import Footer from './components/Footer'
 import LandingPage from './views/LandingPage'
 import ReservationPage from './views/ReservationPage'
 import PaymentPage from './views/Checkout'
@@ -64,7 +65,7 @@ const App: FC<Props> = ({ setLoggedInState, getUserProfile, userState }) => {
   return (
     <BrowserRouter>
       {/* <ToastContainer /> */}
-      <Container fluid className="p-0">
+      <Container fluid className="p-0 bg-lavender">
         <Header executeScrollToMenu={executeScroll} onModalShow={() => setModalShow(true)} />
         <LoginSignupModal show={modalShow} onHide={() => setModalShow(false)} />
         <Switch>
@@ -86,6 +87,7 @@ const App: FC<Props> = ({ setLoggedInState, getUserProfile, userState }) => {
           />
           <Route path="/:id?" render={props => <LandingPage {...props} menuRef={menuRef} />} />
         </Switch>
+        <Footer />
       </Container>
     </BrowserRouter>
   )
