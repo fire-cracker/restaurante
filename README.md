@@ -23,7 +23,7 @@
 
 ## Demo
 
-Visit [App on Heroku](https://firecracker-directory-app.herokuapp.com/)
+Visit [App on Heroku](https://firecracker-restaurante.herokuapp.com/)
 
 ## Dependencies
 
