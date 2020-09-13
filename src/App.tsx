@@ -14,6 +14,7 @@ import { IRootState } from './redux/reducers'
 import { IUser, IUserState } from './types/usersTypes'
 import { INewReservation } from './types/reservationsTypes'
 import { setLoggedInState, getUserProfile } from './redux/actions/users'
+import 'react-toastify/dist/ReactToastify.css'
 
 interface Props {
   userState: IUserState
@@ -32,18 +33,11 @@ const App: FC<Props> = ({ setLoggedInState, getUserProfile, userState }) => {
       let id = ''
       try {
         ;({ id } = JSON.parse(window.atob(token.split('.')[1])))
+        if (id) {
+          getUserProfile(id)
+        }
       } catch (error) {
         localStorage.clear()
-      }
-
-      if (id) {
-        (async () => {
-          const user = await getUserProfile(id)
-          if (user) await setLoggedInState(user)
-          else {
-            localStorage.clear()
-          }
-        })()
       }
     }
   }, [getUserProfile, setLoggedInState, userState])

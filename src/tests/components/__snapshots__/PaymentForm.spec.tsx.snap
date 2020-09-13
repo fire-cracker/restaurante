@@ -12,6 +12,7 @@ Object {
           id="card-element"
         />
         <button
+          class="bg-black text-darkkhaki"
           disabled=""
           id="submit"
         >
@@ -33,6 +34,7 @@ Object {
         id="card-element"
       />
       <button
+        class="bg-black text-darkkhaki"
         disabled=""
         id="submit"
       >

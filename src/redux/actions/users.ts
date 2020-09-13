@@ -119,7 +119,6 @@ export const getUserProfile = (userId: string) => async (
     return user
   } catch (error) {
     dispatch(getProfileRequestFailed())
-    toast.error(error.message)
     throw error
   }
 }
