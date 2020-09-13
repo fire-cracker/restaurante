@@ -2,7 +2,7 @@ import React, { FC, useRef, RefObject, useEffect, useState } from 'react'
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import { connect } from 'react-redux'
 import Container from 'react-bootstrap/Container'
-// import { ToastContainer } from 'react-toastify'
+import { ToastContainer } from 'react-toastify'
 
 import Header from './components/Header'
 import LoginSignupModal from './components/LoginSignupModal'
@@ -64,7 +64,7 @@ const App: FC<Props> = ({ setLoggedInState, getUserProfile, userState }) => {
 
   return (
     <BrowserRouter>
-      {/* <ToastContainer /> */}
+      <ToastContainer />
       <Container fluid className="p-0 bg-lavender">
         <Header executeScrollToMenu={executeScroll} onModalShow={() => setModalShow(true)} />
         <LoginSignupModal show={modalShow} onHide={() => setModalShow(false)} />
