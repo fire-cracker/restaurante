@@ -78,7 +78,7 @@ const PaymentForm: FC<IProps> = ({ reservation, addReservation }): ReactElement 
   return (
     <form className="payment-form" onSubmit={handleSubmit}>
       <CardElement id="card-element" options={cardStyle} onChange={handleChange} />
-      <button disabled={processing || disabled} id="submit">
+      <button disabled={processing || disabled} id="submit" className="bg-black text-darkkhaki">
         <span id="button-text">
           {processing ? <ClipLoader size={30} color={'#00acc1'} loading={true} /> : 'Pay'}
         </span>
