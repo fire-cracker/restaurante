@@ -1,6 +1,6 @@
 # Restauranté
 
-[![Build Status](https://travis-ci.org/fire-cracker/restaurante.svg?branch=master)](https://travis-ci.org/fire-cracker/restaurante)[![Coverage Status](https://coveralls.io/repos/github/fire-cracker/restaurante/badge.svg?branch=master)](https://coveralls.io/github/fire-cracker/restaurante?branch=master)
+[![Build Status](https://travis-ci.org/fire-cracker/restaurante.svg?branch=master)](https://travis-ci.org/fire-cracker/restaurante)
 
 ## Table of Contents
 
@@ -23,7 +23,7 @@
 
 ## Demo
 
-Visit [App on Heroku](https://firecracker-directory-app.herokuapp.com/)
+Visit [App on Heroku](https://firecracker-restaurante.herokuapp.com/)
 
 ## Dependencies
 

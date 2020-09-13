@@ -6,6 +6,9 @@ Object {
   "baseElement": <body>
     <div>
       <div
+        class="Toastify"
+      />
+      <div
         class="p-0 bg-lavender container-fluid"
       >
         <nav
@@ -423,6 +426,9 @@ Object {
     </div>
   </body>,
   "container": <div>
+    <div
+      class="Toastify"
+    />
     <div
       class="p-0 bg-lavender container-fluid"
     >

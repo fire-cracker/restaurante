@@ -8,7 +8,8 @@ const {
   SIGNUP_REQUEST_PENDING,
   SIGNUP_REQUEST_SUCCESS,
   SIGNUP_REQUEST_FAILED,
-  SET_USER_STATE,
+  GET_PROFILE_REQUEST_SUCCESS,
+  GET_PROFILE_REQUEST_FAILED,
   LOGOUT_REQUEST_SUCCESS
 } = ActionType
 
@@ -19,13 +20,6 @@ const initialState: IUserState = {
 }
 export default (state = initialState, action: Action<any>): IUserState => {
   switch (action.type) {
-    case SET_USER_STATE:
-      return {
-        ...state,
-        user: action.payload,
-        isLoggedIn: true
-      }
-
     case LOGIN_REQUEST_PENDING:
       return {
         ...state,
@@ -66,6 +60,19 @@ export default (state = initialState, action: Action<any>): IUserState => {
         ...state,
         isLoggedIn: false,
         logingIn: false
+      }
+
+    case GET_PROFILE_REQUEST_SUCCESS:
+      return {
+        ...state,
+        user: action.payload,
+        isLoggedIn: true
+      }
+
+    case GET_PROFILE_REQUEST_FAILED:
+      return {
+        ...state,
+        isLoggedIn: false
       }
 
     case LOGOUT_REQUEST_SUCCESS:

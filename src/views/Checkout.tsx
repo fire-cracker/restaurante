@@ -10,7 +10,8 @@ import { addReservation } from '../redux/actions/reservations'
 import PaymentForm from '../components/PaymentForm'
 import { INewReservation, IStripeCharge } from '../types/reservationsTypes'
 
-const stripePromise = loadStripe('pk_test_s7dzKE4O2saVThp2USNgEFoW00hc0xxPft')
+const stripeKey = process.env.REACT_APP_STRIPE_KEY
+const stripePromise = loadStripe(stripeKey || '')
 
 interface IProps extends RouteComponentProps {
   reservation: INewReservation | null

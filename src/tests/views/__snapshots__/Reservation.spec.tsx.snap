@@ -193,7 +193,7 @@ Object {
                               class="justify-content-center align-items-center form-row"
                             >
                               <button
-                                class="bg-black btn btn-primary"
+                                class="reservation-buttton bg-black mt-3  btn btn-primary"
                                 type="submit"
                               >
                                 Book A Table
@@ -203,12 +203,96 @@ Object {
                         </div>
                       </div>
                       <div
-                        class="col-lg-3"
+                        class="complimentary-card col-lg-4"
                       >
                         <div
-                          class="card"
+                          class="h-100 w-100 p-4 card"
                         >
-                          Hello
+                          <div
+                            class="card-inner py-5 px-3 text-center text-white d-flex align-items-center col"
+                          >
+                            <div
+                              class="col"
+                            >
+                              <div
+                                class="text-header mb-4"
+                              >
+                                <div
+                                  class="text-darkkhaki time-header-0 font-weight-bold"
+                                >
+                                  <p
+                                    class="mb-0"
+                                  >
+                                    Restauranté
+                                  </p>
+                                </div>
+                                <div
+                                  class="time-header-1"
+                                >
+                                  <h2>
+                                    Opening Time
+                                  </h2>
+                                </div>
+                              </div>
+                              <div
+                                class="time-info mb-3"
+                              >
+                                <div
+                                  class="text-darkkhaki"
+                                >
+                                  <h2>
+                                    Monday - Friday
+                                  </h2>
+                                </div>
+                                <div>
+                                  <p
+                                    class="mb-0"
+                                  >
+                                    8 am - 11 am ( Breakfast )
+                                  </p>
+                                </div>
+                                <div>
+                                  <p
+                                    class="mb-0"
+                                  >
+                                    8 am- 12 pm ( Lunch-Dinner )
+                                  </p>
+                                </div>
+                              </div>
+                              <div
+                                class="time-info mb-3"
+                              >
+                                <div
+                                  class="text-darkkhaki"
+                                >
+                                  <h2>
+                                    Saturday - Sunday
+                                  </h2>
+                                </div>
+                                <div>
+                                  <p
+                                    class="mb-0"
+                                  >
+                                    7 am - 2 pm ( Breakfast )
+                                  </p>
+                                </div>
+                                <div>
+                                  <p
+                                    class="mb-0"
+                                  >
+                                    1 pm - 9 pm ( Lunch - Dinner )
+                                  </p>
+                                </div>
+                              </div>
+                              <div
+                                class="bg-darkkhaki call-div mt-5"
+                              >
+                                <p>
+                                  Call: +2346565432
+                                </p>
+                              </div>
+                            </div>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -410,7 +494,7 @@ Object {
                             class="justify-content-center align-items-center form-row"
                           >
                             <button
-                              class="bg-black btn btn-primary"
+                              class="reservation-buttton bg-black mt-3  btn btn-primary"
                               type="submit"
                             >
                               Book A Table
@@ -420,12 +504,96 @@ Object {
                       </div>
                     </div>
                     <div
-                      class="col-lg-3"
+                      class="complimentary-card col-lg-4"
                     >
                       <div
-                        class="card"
+                        class="h-100 w-100 p-4 card"
                       >
-                        Hello
+                        <div
+                          class="card-inner py-5 px-3 text-center text-white d-flex align-items-center col"
+                        >
+                          <div
+                            class="col"
+                          >
+                            <div
+                              class="text-header mb-4"
+                            >
+                              <div
+                                class="text-darkkhaki time-header-0 font-weight-bold"
+                              >
+                                <p
+                                  class="mb-0"
+                                >
+                                  Restauranté
+                                </p>
+                              </div>
+                              <div
+                                class="time-header-1"
+                              >
+                                <h2>
+                                  Opening Time
+                                </h2>
+                              </div>
+                            </div>
+                            <div
+                              class="time-info mb-3"
+                            >
+                              <div
+                                class="text-darkkhaki"
+                              >
+                                <h2>
+                                  Monday - Friday
+                                </h2>
+                              </div>
+                              <div>
+                                <p
+                                  class="mb-0"
+                                >
+                                  8 am - 11 am ( Breakfast )
+                                </p>
+                              </div>
+                              <div>
+                                <p
+                                  class="mb-0"
+                                >
+                                  8 am- 12 pm ( Lunch-Dinner )
+                                </p>
+                              </div>
+                            </div>
+                            <div
+                              class="time-info mb-3"
+                            >
+                              <div
+                                class="text-darkkhaki"
+                              >
+                                <h2>
+                                  Saturday - Sunday
+                                </h2>
+                              </div>
+                              <div>
+                                <p
+                                  class="mb-0"
+                                >
+                                  7 am - 2 pm ( Breakfast )
+                                </p>
+                              </div>
+                              <div>
+                                <p
+                                  class="mb-0"
+                                >
+                                  1 pm - 9 pm ( Lunch - Dinner )
+                                </p>
+                              </div>
+                            </div>
+                            <div
+                              class="bg-darkkhaki call-div mt-5"
+                            >
+                              <p>
+                                Call: +2346565432
+                              </p>
+                            </div>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>

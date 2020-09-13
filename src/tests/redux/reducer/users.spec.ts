@@ -16,12 +16,19 @@ it('Should return default state', () => {
   expect(state).toEqual(initialState)
 })
 
-it('Should handle SET_USER_STATE', () => {
+it('Should handle GET_PROFILE_REQUEST_SUCCESS', () => {
   const state = userReducer(initialState, {
-    type: ActionType.SET_USER_STATE,
+    type: ActionType.GET_PROFILE_REQUEST_SUCCESS,
     payload: user
   })
   expect(state).toEqual(userState)
+})
+
+it('Should handle GET_PROFILE_REQUEST_FAILED', () => {
+  const state = userReducer(initialState, {
+    type: ActionType.GET_PROFILE_REQUEST_FAILED
+  })
+  expect(state).toEqual({ user: null, logingIn: false, isLoggedIn: false })
 })
 
 it('Should handle LOGIN_REQUEST_PENDING', () => {

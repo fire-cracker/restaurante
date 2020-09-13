@@ -147,15 +147,53 @@ const ReservationPage: FC<IProps> = ({
                 </Form.Row>
 
                 <Form.Row className="justify-content-center align-items-center">
-                  <Button className="bg-black" type="submit">
+                  <Button className="reservation-buttton bg-black mt-3 " type="submit">
                     Book A Table
                   </Button>
                 </Form.Row>
               </Form>
             </Row>
           </Col>
-          <Col lg={3}>
-            <Card>Hello</Card>
+          <Col lg={4} className="complimentary-card">
+            <Card className="h-100 w-100 p-4">
+              <Col className="card-inner py-5 px-3 text-center text-white d-flex align-items-center">
+                <Col>
+                  <div className="text-header mb-4">
+                    <div className="text-darkkhaki time-header-0 font-weight-bold">
+                      <p className="mb-0">Restauranté</p>
+                    </div>
+                    <div className="time-header-1">
+                      <h2>Opening Time</h2>
+                    </div>
+                  </div>
+                  <div className="time-info mb-3">
+                    <div className="text-darkkhaki">
+                      <h2>Monday - Friday</h2>
+                    </div>
+                    <div>
+                      <p className="mb-0">8 am - 11 am ( Breakfast )</p>
+                    </div>
+                    <div>
+                      <p className="mb-0">8 am- 12 pm ( Lunch-Dinner )</p>
+                    </div>
+                  </div>
+                  <div className="time-info mb-3">
+                    <div className="text-darkkhaki">
+                      <h2>Saturday - Sunday</h2>
+                    </div>
+                    <div>
+                      <p className="mb-0">7 am - 2 pm ( Breakfast )</p>
+                    </div>
+                    <div>
+                      <p className="mb-0">1 pm - 9 pm ( Lunch - Dinner )</p>
+                    </div>
+                  </div>
+                  <div className="bg-darkkhaki call-div mt-5">
+                    <p>Call: +2346565432</p>
+                  </div>
+                </Col>
+              </Col>
+            </Card>
           </Col>
         </Row>
       </Wrapper>
