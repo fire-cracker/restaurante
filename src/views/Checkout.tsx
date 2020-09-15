@@ -15,11 +15,14 @@ const stripePromise = loadStripe(stripeKey || '')
 
 interface IProps extends RouteComponentProps {
   reservation: INewReservation | null
-  addReservation: (reservation: INewReservation, stripeToken: string) => Promise<IStripeCharge>
+  addReservation: (
+    reservation: INewReservation,
+    stripeToken: string
+  ) => Promise<IStripeCharge | undefined>
 }
 
 const Checkout: FC<IProps> = ({ history, reservation, addReservation }): ReactElement => {
-  if (reservation === null) history.push('/home')
+  if (reservation === null) history.push('/reservation')
   useEffect(() => {
     window.scrollTo(0, 0)
   }, [])
@@ -29,7 +32,11 @@ const Checkout: FC<IProps> = ({ history, reservation, addReservation }): ReactEl
       <Wrapper>
         <Row className="checkout-wrapper justify-content-center align-items-center">
           <Elements stripe={stripePromise}>
-            <PaymentForm reservation={reservation} addReservation={addReservation} />
+            <PaymentForm
+              reservation={reservation}
+              addReservation={addReservation}
+              history={history}
+            />
           </Elements>
         </Row>
       </Wrapper>

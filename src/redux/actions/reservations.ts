@@ -4,6 +4,7 @@ import { toast } from 'react-toastify'
 import axios from '../../utils/axiosConfig'
 import { ActionType, Action } from '../../types/actionsTypes'
 import { INewReservation, IStripeCharge } from '../../types/reservationsTypes'
+import { errorHandler } from '../../utils'
 
 const {
   ADD_RESERVATION_REQUEST_PENDING,
@@ -28,7 +29,7 @@ export const addReservationRequestFailed = (): Action<any> => ({
 
 export const addReservation = (reservation: INewReservation, stripeToken: string) => async (
   dispatch: Dispatch<Action<any>>
-): Promise<IStripeCharge> => {
+): Promise<IStripeCharge | undefined> => {
   try {
     dispatch(addReservationRequestPending())
     const {
@@ -40,7 +41,6 @@ export const addReservation = (reservation: INewReservation, stripeToken: string
     return stripeCharge
   } catch (error) {
     dispatch(addReservationRequestFailed())
-    toast.error(error.message)
-    throw error
+    toast.error(errorHandler(error.response))
   }
 }

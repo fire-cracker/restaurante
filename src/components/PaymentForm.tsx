@@ -24,10 +24,14 @@ const cardStyle = {
 
 interface IProps {
   reservation: INewReservation | null
-  addReservation: (reservation: INewReservation, stripeToken: string) => Promise<IStripeCharge>
+  addReservation: (
+    reservation: INewReservation,
+    stripeToken: string
+  ) => Promise<IStripeCharge | undefined>
+  history: any
 }
 
-const PaymentForm: FC<IProps> = ({ reservation, addReservation }): ReactElement => {
+const PaymentForm: FC<IProps> = ({ reservation, addReservation, history }): ReactElement => {
   const [error, setError] = useState('')
   const [processing, setProcessing] = useState(false)
   const [disabled, setDisabled] = useState(true)
@@ -56,11 +60,12 @@ const PaymentForm: FC<IProps> = ({ reservation, addReservation }): ReactElement 
       setError(result.error.message!)
     } else {
       setError('')
-      const stripeCharge: IStripeCharge = await addReservation(reservation!, result.token.id)
+      const stripeCharge = (await addReservation(reservation!, result.token.id)) as IStripeCharge
       if (stripeCharge) {
         setReceiptUrl(stripeCharge.receipt_url)
       } else {
         setError('Payment failed')
+        history.push('/reservation')
       }
     }
     setProcessing(false)

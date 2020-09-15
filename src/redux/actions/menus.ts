@@ -4,6 +4,7 @@ import { toast } from 'react-toastify'
 import axios from '../../utils/axiosConfig'
 import { ActionType, Action } from '../../types/actionsTypes'
 import { IMenu } from '../../types/menusTypes'
+import { errorHandler } from '../../utils'
 
 const {
   GET_MENUS_REQUEST_PENDING,
@@ -41,7 +42,7 @@ export const getMenus = () => async (
     return data
   } catch (error) {
     dispatch(getMenusRequestFailed())
-    toast.error(error.message)
+    toast.error(errorHandler(error.response))
     throw error
   }
 }

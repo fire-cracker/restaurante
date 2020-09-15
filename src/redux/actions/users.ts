@@ -4,6 +4,7 @@ import { toast } from 'react-toastify'
 import axios from '../../utils/axiosConfig'
 import { ActionType, Action } from '../../types/actionsTypes'
 import { IUser } from '../../types/usersTypes'
+import { errorHandler } from '../../utils'
 
 const {
   LOGIN_REQUEST_PENDING,
@@ -80,7 +81,7 @@ export const login = (email: string, password: string) => async (
     return user
   } catch (error) {
     dispatch(loginRequestFailed())
-    toast.error(error.message)
+    toast.error(errorHandler(error.response))
     throw error
   }
 }
@@ -100,7 +101,7 @@ export const signup = (username: string, email: string, password: string) => asy
     return user
   } catch (error) {
     dispatch(signupRequestFailed())
-    toast.error(error.message)
+    toast.error(errorHandler(error.response))
     throw error
   }
 }
@@ -119,6 +120,7 @@ export const getUserProfile = (userId: string) => async (
     return user
   } catch (error) {
     dispatch(getProfileRequestFailed())
+    toast.error(errorHandler(error.response))
     throw error
   }
 }
