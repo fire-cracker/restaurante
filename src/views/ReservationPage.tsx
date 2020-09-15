@@ -1,6 +1,7 @@
 import React, { FC, useState, useEffect, ReactElement, Dispatch, SetStateAction } from 'react'
 import { RouteComponentProps } from 'react-router'
 import { connect } from 'react-redux'
+import moment from 'moment'
 
 import Row from 'react-bootstrap/Row'
 import Card from 'react-bootstrap/Card'
@@ -51,7 +52,7 @@ const ReservationPage: FC<IProps> = ({
   }) => {
     setReservationState(prevState => ({
       ...prevState,
-      [name]: value
+      [name]: name === 'persons' ? value.split(' ')[0] : value
     }))
   }
 
@@ -113,6 +114,7 @@ const ReservationPage: FC<IProps> = ({
                       name="date"
                       type="date"
                       placeholder="Date"
+                      min={moment().format('YYYY-MM-DD')}
                       onChange={onhandleChange}
                     />
                     <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
