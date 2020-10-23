@@ -88,7 +88,7 @@ const PaymentForm: FC<IProps> = ({ reservation, addReservation, history }): Reac
           {processing ? (
             <ClipLoader size={30} color={'#00acc1'} loading={true} />
           ) : (
-            `Pay $${reservation!.persons * 1000}`
+            `Pay ${reservation && `$${reservation.persons * 1000}`}`
           )}
         </span>
       </button>
