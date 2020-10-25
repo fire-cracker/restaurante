@@ -7,7 +7,14 @@ import thunk from 'redux-thunk'
 import LandingPage from '../../views/LandingPage'
 
 const createMockStore = configureMockStore([thunk])
-const store = createMockStore({})
+const store = createMockStore({
+  menuState: {
+    menus: {},
+    count: 0,
+    fetching: false,
+    fetched: true
+  }
+})
 
 interface Props {
   menuRef: RefObject<HTMLInputElement>
@@ -35,7 +42,7 @@ describe('LandingPage', () => {
     jest.clearAllMocks()
   })
 
-  test('renders App component', () => {
+  test('renders LandingPage component', () => {
     expect(wrapper).toMatchSnapshot()
   })
 })

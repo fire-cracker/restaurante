@@ -19,7 +19,7 @@ Object {
           <span
             id="button-text"
           >
-            Pay
+            Pay $2000
           </span>
         </button>
         
@@ -41,7 +41,7 @@ Object {
         <span
           id="button-text"
         >
-          Pay
+          Pay $2000
         </span>
       </button>
       

@@ -128,6 +128,7 @@ Object {
                                 <input
                                   class="form-control"
                                   data-testid="date"
+                                  min="2020-10-26"
                                   name="date"
                                   placeholder="Date"
                                   required=""
@@ -429,6 +430,7 @@ Object {
                               <input
                                 class="form-control"
                                 data-testid="date"
+                                min="2020-10-26"
                                 name="date"
                                 placeholder="Date"
                                 required=""

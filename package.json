@@ -38,7 +38,7 @@
     "start": "serve -s build",
     "start:dev": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --watchAll=false -u --coverage",
+    "test": "react-scripts test --env jest-environment-jsdom-fourteen --watchAll=false -u --coverage",
     "eject": "react-scripts eject",
     "lint": "eslint . --ext .ts",
     "coverage": "cat ./coverage/lcov.info | coveralls"
