@@ -85,7 +85,11 @@ const PaymentForm: FC<IProps> = ({ reservation, addReservation, history }): Reac
       <CardElement id="card-element" options={cardStyle} onChange={handleChange} />
       <button disabled={processing || disabled} id="submit" className="bg-black text-darkkhaki">
         <span id="button-text">
-          {processing ? <ClipLoader size={30} color={'#00acc1'} loading={true} /> : 'Pay'}
+          {processing ? (
+            <ClipLoader size={30} color={'#00acc1'} loading={true} />
+          ) : (
+            `Pay ${reservation && `$${reservation.persons * 1000}`}`
+          )}
         </span>
       </button>
       {error && (

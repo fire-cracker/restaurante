@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`LandingPage renders App component 1`] = `
+exports[`LandingPage renders LandingPage component 1`] = `
 Object {
   "asFragment": [Function],
   "baseElement": <body>

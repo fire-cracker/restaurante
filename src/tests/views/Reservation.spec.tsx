@@ -96,7 +96,6 @@ describe('Login/Signup Modal', () => {
     expect(dateInput).toBeInTheDocument()
     await userEvent.type(dateInput, '04/04/2020')
     waitFor(() => {
-      wrapper.debug()
       expect(dateInput).toHaveValue('04/04/2020')
       expect(onhandleChange).toHaveBeenCalledTimes(10)
     })

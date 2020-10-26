@@ -1,21 +1,26 @@
 import React, { RefObject } from 'react'
 import { render, cleanup } from '@testing-library/react'
-import userEvent from '@testing-library/user-event'
 import { Provider } from 'react-redux'
 import configureMockStore from 'redux-mock-store'
 import thunk from 'redux-thunk'
 
 import MenusSection from '../../components/Menus'
+// import { getMenus } from '../../redux/actions/menus'
 import { IMenu } from '../../types/menusTypes'
 import { menus } from '../mocks/menus.mock'
 
-jest.mock('../../utils/axiosConfig')
-jest.mock('../../redux/actions/menus')
+// jest.mock('../../utils/axiosConfig')
+// jest.mock('../../redux/actions/menus')
 
 const createMockStore = configureMockStore([thunk])
 
 const store = createMockStore({
-  menus
+  menuState: {
+    menus,
+    count: menus.length,
+    fetching: false,
+    fetched: true
+  }
 })
 
 interface IProps {
@@ -23,10 +28,10 @@ interface IProps {
   getMenus: () => Promise<{ menus: IMenu[]; count: number }>
   menus?: IMenu[]
 }
-describe('Header', () => {
+describe('MenusSection', () => {
   const defaultProps: IProps = {
     menuRef: React.createRef(),
-    getMenus: jest.fn().mockResolvedValue({ menus }),
+    getMenus: jest.fn().mockResolvedValue(menus),
     menus: menus
   }
 
@@ -34,7 +39,7 @@ describe('Header', () => {
     const props = { ...defaultProps, ...newProps }
     return render(
       <Provider store={store}>
-        <MenusSection {...props} menus={menus} />
+        <MenusSection {...props} />
       </Provider>
     )
   }

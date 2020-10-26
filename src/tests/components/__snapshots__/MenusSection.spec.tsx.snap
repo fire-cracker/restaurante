@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Header renders MenusSection component 1`] = `
+exports[`MenusSection renders MenusSection component 1`] = `
 Object {
   "asFragment": [Function],
   "baseElement": <body>

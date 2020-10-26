@@ -6,16 +6,19 @@ import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Container from 'react-bootstrap/Container'
 import Jumbotron from 'react-bootstrap/Jumbotron'
+import ClipLoader from 'react-spinners/ClipLoader'
 
 import { getMenus } from '../redux/actions/menus'
-import { IMenu } from '../types/menusTypes'
+import { IRootState } from '../redux/reducers'
+import { IMenu, IMenuState } from '../types/menusTypes'
 import MenuMedia from './MenuMedia'
 
 interface Props {
   menuRef?: RefObject<HTMLInputElement>
   getMenus: () => Promise<{ menus: IMenu[]; count: number }>
+  menuState: IMenuState
 }
-const MenusSection: FC<Props> = ({ menuRef, getMenus }): ReactElement => {
+const MenusSection: FC<Props> = ({ menuRef, getMenus, menuState }): ReactElement => {
   const [menus, setMenusState] = useState([] as IMenu[])
 
   useEffect(() => {
@@ -84,23 +87,27 @@ const MenusSection: FC<Props> = ({ menuRef, getMenus }): ReactElement => {
               </Row>
               <Row className="menu-body mx-0 pt-5">
                 <Tab.Content>
-                  {['breakfast', 'lunch', 'dinner', 'drink'].map((item, key) => (
-                    <Tab.Pane eventKey={item} key={key}>
-                      <Row>
-                        {menus
-                          .filter(menu => menu.type === item)
-                          .map((menu, key) => (
-                            <MenuMedia
-                              key={key}
-                              imageUrl={menu.image}
-                              name={menu.name}
-                              price={menu.price}
-                              recipe={menu.recipe}
-                            />
-                          ))}
-                      </Row>
-                    </Tab.Pane>
-                  ))}
+                  {menuState.fetching ? (
+                    <ClipLoader size={30} color={'#c5a572'} loading={true} />
+                  ) : (
+                    ['breakfast', 'lunch', 'dinner', 'drink'].map((item, key) => (
+                      <Tab.Pane eventKey={item} key={key}>
+                        <Row>
+                          {menus
+                            .filter(menu => menu.type === item)
+                            .map((menu, key) => (
+                              <MenuMedia
+                                key={key}
+                                imageUrl={menu.image}
+                                name={menu.name}
+                                price={menu.price}
+                                recipe={menu.recipe}
+                              />
+                            ))}
+                        </Row>
+                      </Tab.Pane>
+                    ))
+                  )}
                 </Tab.Content>
               </Row>
             </Container>
@@ -110,7 +117,7 @@ const MenusSection: FC<Props> = ({ menuRef, getMenus }): ReactElement => {
     </Jumbotron>
   )
 }
-const mapStateToProps = () => ({})
+const mapStateToProps = (state: IRootState) => ({ menuState: state.menuState })
 const mapDispatchToProps = { getMenus }
 
 export default connect(mapStateToProps, mapDispatchToProps)(MenusSection)

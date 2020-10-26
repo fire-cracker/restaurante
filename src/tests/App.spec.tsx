@@ -12,6 +12,12 @@ const store = createMockStore({
     user: null,
     logingIn: false,
     isLoggedIn: false
+  },
+  menuState: {
+    menus: null,
+    count: 0,
+    fetching: false,
+    fetched: false
   }
 })
 
